@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Florian Strasser - Frontend Development & Web Design Portfolio</title>
+</head>
+
+<body class="bg-purple-dark text-white text-opacity-80 leading-relaxed">
+    <nav class="py-4">
+        <ul class="flex flex-wrap gap-1">
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills&nbsp;&&nbsp;Tools</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h1 class="text-8xl mb-16">
+                <span class="text-2xl">Hello, I'm</span><br>
+                <span class="text-bg-gradient">Florian Strasser.</span><br>
+                I make websites.
+            </h1>
+            <p class="text-xl max-w-2xl mb-6 leading-relaxed">
+                I’m a multi-disciplinary <strong class="text-white">frontend developer</strong> & <strong class="text-white">web designer</strong> with a keen eye for details.
+                I focus on fast and accessible web experiences.
+            </p>
+            <p class="text-xl max-w-2xl mb-8 leading-relaxed">
+                I have worked as a web & <strong class="text-white">graphic designer</strong> at 3YOURMIND, then shifted my focus on <strong class="text-white">web development</strong>.
+                At Allod MediaC2 I was leading the design and development of websites
+                for customers like Reggeborgh, Taurecon and Groth Gruppe.
+            </p>
+            <a href="#projects" class="btn">View Projects</a>
+        </section>
+
+        <section id="skills">
+            <h2 class="text-6xl mb-12 text-bg-gradient">Skills & Tools</h2>
+            <div class="flex flex-wrap gap-x-24 gap-y-8 font-mono text-lg leading-loose">
+                <ul>
+                    <li>JavaScript</li>
+                    <li>HTML/CSS</li>
+                    <li>SCSS</li>
+                    <li>C#/.NET Core</li>
+                </ul>
+                <ul>
+                    <li>Tailwind CSS</li>
+                    <li>Eleventy</li>
+                    <li>Bootstrap</li>
+                    <li>Vue.js</li>
+                </ul>
+                <ul>
+                    <li>Git</li>
+                    <li>npm</li>
+                    <li>Webpack</li>
+                </ul>
+                <ul>
+                    <li>VS Code</li>
+                    <li>Figma</li>
+                    <li>Adobe CC</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="text-6xl mb-12 text-bg-gradient">Experience</h2>
+            <div>
+                <div class="experience-item">
+                    <h3>Frontend Developer & Web Designer @ Allod MediaC2</h3>
+                    <h4>2019 - 2021 / Berlin, Germany</h4>
+                    <ul class="list">
+                        <li>Leading several web projects from design to implementation, including wireframing & prototyping, UX design, frontend and .NET development.</li>
+                        <li>Working with a variety of languages, frameworks and tools such as JavaScript, SCSS, C#/.NET, Eleventy, Bootstrap, Tailwind CSS, and Webpack.</li>
+                        <li>Communicating with various stakeholders from backend development, graphic design and clients on a daily basis.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Graphic & Web Designer Lead @ 3YOURMIND</h3>
+                    <h4>2016 - 2018 / Berlin, Germany</h4>
+                    <ul class="list">
+                        <li>Organizing design sprints and allocating design tasks in the team. Responsible for branding and online/offline marketing materials.</li>
+                        <li>Creating icons, graphics, mockups, wireframes and landing pages with Adobe CC, HTML, CSS and JavaScript.</li>
+                        <li>Developing a custom HubSpot CMS theme and creating templates in Django for the development team.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Design Intern @ 3YOURMIND</h3>
+                    <h4>2016 / Berlin, Germany</h4>
+                    <ul class="list">
+                        <li>Creating various online/offline marketing materials, icons, graphics, mockups, wireframes and landing pages with Adobe CC, HTML, CSS and JavaScript.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="text-6xl mb-12 text-bg-gradient">Projects</h2>
+            <div class="grid gap-8">
+                <div class="project-item bg-miru">
+                    <img src="<%= require('./images/miru.png') %>" alt="screenshots of the MIRU website">
+                    <div class="project-details">
+                        <h3>MIRU</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <ul>
+                            <li>Tailwind CSS</li>
+                            <li>Eleventy</li>
+                        </ul>
+                        <a class="btn btn-sm" href="https://www.miru-potsdam.de" target="_blank" rel="noreferrer">View Website</a>
+                    </div>
+                </div>
+
+                <div class="project-item bg-mybay">
+                    <img src="<%= require('./images/mybay.png') %>" alt="screenshots of the MY BAY website">
+                    <div class="project-details">
+                        <h3>MY BAY</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <ul>
+                            <li>Bootstrap</li>
+                            <li>.NET Core</li>
+                        </ul>
+                        <a class="btn btn-sm" href="https://www.mybay.berlin" target="_blank" rel="noreferrer">View Website</a>
+                    </div>
+                </div>
+
+                <div class="project-item bg-qhliving">
+                    <img src="<%= require('./images/qh-living.png') %>" alt="screenshots of the QH-LIVING website">
+                    <div class="project-details">
+                        <h3>QH-LIVING</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <ul>
+                            <li>Bootstrap</li>
+                            <li>.NET Core</li>
+                        </ul>
+                        <a class="btn btn-sm" href="https://www.qh-living.com" target="_blank" rel="noreferrer">View Website</a>
+                    </div>
+                </div>
+
+                <div class="project-item bg-teleclap">
+                    <img src="<%= require('./images/teleclap.png') %>" alt="screenshots of the TeleClap web app">
+                    <div class="project-details">
+                        <h3>TeleClap</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <ul>
+                            <li>Vue.js</li>
+                        </ul>
+                        <a class="btn btn-sm" href="https://teleclap.org" target="_blank" rel="noreferrer">View Website</a>
+                    </div>
+                </div>
+
+                <div class="project-item bg-flexgallery">
+                    <img src="<%= require('./images/flex-gallery.png') %>" alt="screenshots of the flexbox project">
+                    <div class="project-details">
+                        <h3>flex-gallery</h3>
+                        <p>Flex-Gallery is an open source responsive lightbox gallery with flexbox and progressive image loading written in JavaScript and SCSS.</p>
+                        <ul>
+                            <li>flexbox</li>
+                            <li>progressive image loading</li>
+                        </ul>
+                        <a class="btn btn-sm" href="https://github.com/flostrasser/flex-gallery" target="_blank" rel="noreferrer">View Repository</a>
+                    </div>
+                </div>
+
+                <div class="project-item bg-threeyourmind">
+                    <img src="<%= require('./images/3yourmind.png') %>" alt="screenshots of the 3YOURMIND website">
+                    <div class="project-details">
+                        <h3>3YOURMIND</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <ul>
+                            <li>Bootstrap</li>
+                            <li>HubSpot CMS</li>
+                        </ul>
+                        <a class="btn btn-sm" href="https://www.3yourmind.com/" target="_blank" rel="noreferrer">View Website</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="text-6xl mb-12 text-bg-gradient">Contact</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis saepe sit cumque optio doloribus. Placeat incidunt blanditiis iste iure quam!</p>
+        </section>
+    </main>
+
+    <footer class="bg-black bg-opacity-40 py-8 justify-items-center font-mono text-sm">
+        <div class="mb-2">Made with ❤️ in Berlin.</div>
+        <div>&copy; 2021 Florian Strasser</div>
+    </footer>
+</body>
+
+</html>
