@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = {
     mode: 'development',
@@ -18,6 +19,7 @@ module.exports = {
             template: './src/index.html',
             hash: true,
         }),
+        // generate favicons and link them in index.html
         new FaviconsWebpackPlugin({
             logo: './src/favicon.svg',
             prefix: '/favicons/',
@@ -41,6 +43,13 @@ module.exports = {
                 }
             }
         }),
+        // optimize generated favicons from FaviconsWebpackPlugin and generated images from responsive-loader
+        new ImageminWebpackPlugin({
+            cacheFolder: __dirname + '/cache',
+            pngquant: {
+                quality: '60-75'
+            }
+        }),
     ],
     module: {
         rules: [
@@ -61,35 +70,17 @@ module.exports = {
                 test: /\.(png|jpe?g|svg)$/i,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: "responsive-loader",
                         options: {
                             outputPath: '/images',
                             publicPath: '/images',
-                            name: '[name].[hash:6].[ext]',
-                            esModule: false,
-                        }
-                    },
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            mozjpeg: {
-                                progressive: true,
-                            },
-                            optipng: {
-                                enabled: false,
-                            },
-                            pngquant: {
-                                quality: [0.65, 0.90],
-                                speed: 4
-                            },
-                            gifsicle: {
-                                enabled: false,
-                            },
-                            webp: {
-                                quality: 75
-                            },
-                        }
-                    },
+                            name: '[name].[ext]?[hash:6]',
+                            adapter: require("responsive-loader/sharp"),
+                            placeholder: true,
+                            placeholderSize: 20,
+                            quality: 60, // quality for webp and avif
+                        },
+                    }
                 ],
             }
         ]
@@ -97,7 +88,8 @@ module.exports = {
     devServer: {
         watchFiles: [
             'src/*.html',
-            'src/*.scss'
+            'src/*.scss',
+            'src/images/*'
         ],
         static: ['dist'],
         compress: true,
