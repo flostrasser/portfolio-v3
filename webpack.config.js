@@ -95,6 +95,6 @@ module.exports = {
         compress: true,
         port: 9000,
         https: true,
-        open: true,
+        open: false,
     },
 };
