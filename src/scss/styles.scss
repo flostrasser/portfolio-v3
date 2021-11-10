@@ -98,17 +98,11 @@
         }
 
         &::before {
-            @apply w-[2px] h-full bg-white justify-self-center;
-            grid-column: 1;
-            grid-row: 1 / span 3;
-            content: '';
+            @apply w-[2px] h-full bg-white content-empty justify-self-center col-start-1 row-start-1 row-span-3;
         }
 
         &::after {
-            @apply w-6 h-6 rounded-full border-white bg-purple-dark border-2 justify-self-center;
-            grid-column: 1;
-            grid-row: 1;
-            content: '';
+            @apply w-6 h-6 rounded-full border-white bg-purple-dark border-2 content-empty justify-self-center col-start-1 row-start-1;
         }
 
         h3 {
@@ -170,5 +164,9 @@
         &::before {
             @apply absolute w-2 h-2 bg-gradient-to-tr from-purple to-blue -left-5 top-2 rounded-full;
         }
+    }
+
+    .content-empty {
+        content: '';
     }
 }
