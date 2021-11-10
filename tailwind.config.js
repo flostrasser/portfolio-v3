@@ -33,6 +33,12 @@ module.exports = {
     //   lg: ['20px', '28px'],
     //   xl: ['24px', '32px'],
     // }
+    extend: {
+      flex: {
+        // golden: '1 0 38.2%',
+        golden: '1 0 61.8%',
+      }
+    }
   },
   variants: {
     extend: {},

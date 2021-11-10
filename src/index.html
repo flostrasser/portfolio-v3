@@ -102,8 +102,15 @@
         <section id="projects">
             <h2 class="text-6xl mb-12 text-bg-gradient">Projects</h2>
             <div class="grid gap-8">
-                <div class="project-item bg-miru">
-                    <img src="<%= require('./images/miru.png') %>" alt="screenshots of the MIRU website">
+                <div class="project-item featured bg-miru">
+                    <div class="picture-wrapper">
+                        <picture>
+                            <source srcset="<%= require('./images/miru.png?format=avif') %>" type="image/avif">
+                            <source srcset="<%= require('./images/miru.png?format=webp') %>" type="image/webp">
+                            <source srcset="<%= require('./images/miru.png') %>" type="image/png">
+                            <img class="project-img" src="<%= require('./images/miru.png').placeholder %>" alt="screenshots of the MIRU website" loading="lazy" width="338" height="135">
+                        </picture>
+                    </div>
                     <div class="project-details">
                         <h3>MIRU</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -116,8 +123,15 @@
                 </div>
 
                 <div class="project-item bg-mybay">
-                    <img src="<%= require('./images/mybay.png') %>" alt="screenshots of the MY BAY website">
-                    <div class="project-details">
+                    <div class="picture-wrapper">
+                        <picture>
+                            <source srcset="<%= require('./images/mybay.png?format=avif') %>" type="image/avif">
+                            <source srcset="<%= require('./images/mybay.png?format=webp') %>" type="image/webp">
+                            <source srcset="<%= require('./images/mybay.png') %>" type="image/png">
+                            <img class="project-img" src="<%= require('./images/mybay.png').placeholder %>" alt="screenshots of the MY BAY website" loading="lazy" width="338" height="219">
+                        </picture>
+                    </div>
+                    <div class="project-details lg:pl-0">
                         <h3>MY BAY</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <ul>
@@ -129,8 +143,15 @@
                 </div>
 
                 <div class="project-item bg-qhliving">
-                    <img src="<%= require('./images/qh-living.png') %>" alt="screenshots of the QH-LIVING website">
-                    <div class="project-details">
+                    <div class="picture-wrapper">
+                        <picture>
+                            <source srcset="<%= require('./images/qh-living.png?format=avif') %>" type="image/avif">
+                            <source srcset="<%= require('./images/qh-living.png?format=webp') %>" type="image/webp">
+                            <source srcset="<%= require('./images/qh-living.png') %>" type="image/png">
+                            <img class="project-img object-bottom" src="<%= require('./images/qh-living.png').placeholder %>" alt="screenshots of the QH-LIVING website" loading="lazy" width="338" height="219">
+                        </picture>
+                    </div>
+                    <div class="project-details lg:order-first lg:pr-0">
                         <h3>QH-LIVING</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <ul>
@@ -142,8 +163,15 @@
                 </div>
 
                 <div class="project-item bg-teleclap">
-                    <img src="<%= require('./images/teleclap.png') %>" alt="screenshots of the TeleClap web app">
-                    <div class="project-details">
+                    <div class="picture-wrapper">
+                        <picture>
+                            <source srcset="<%= require('./images/teleclap.png?format=avif') %>" type="image/avif">
+                            <source srcset="<%= require('./images/teleclap.png?format=webp') %>" type="image/webp">
+                            <source srcset="<%= require('./images/teleclap.png') %>" type="image/png">
+                            <img class="project-img object-bottom" src="<%= require('./images/teleclap.png').placeholder %>" alt="screenshots of the TeleClap web app" loading="lazy" width="338" height="219">
+                        </picture>
+                    </div>
+                    <div class="project-details lg:pl-0">
                         <h3>TeleClap</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <ul>
@@ -154,8 +182,15 @@
                 </div>
 
                 <div class="project-item bg-flexgallery">
-                    <img src="<%= require('./images/flex-gallery.png') %>" alt="screenshots of the flexbox project">
-                    <div class="project-details">
+                    <div class="picture-wrapper">
+                        <picture>
+                            <source srcset="<%= require('./images/flex-gallery.png?format=avif') %>" type="image/avif">
+                            <source srcset="<%= require('./images/flex-gallery.png?format=webp') %>" type="image/webp">
+                            <source srcset="<%= require('./images/flex-gallery.png') %>" type="image/png">
+                            <img class="project-img" src="<%= require('./images/flex-gallery.png').placeholder %>" alt="screenshots of the flexbox project" loading="lazy" width="338" height="219">
+                        </picture>
+                    </div>
+                    <div class="project-details lg:order-first lg:pr-0">
                         <h3>flex-gallery</h3>
                         <p>Flex-Gallery is an open source responsive lightbox gallery with flexbox and progressive image loading written in JavaScript and SCSS.</p>
                         <ul>
@@ -167,8 +202,15 @@
                 </div>
 
                 <div class="project-item bg-threeyourmind">
-                    <img src="<%= require('./images/3yourmind.png') %>" alt="screenshots of the 3YOURMIND website">
-                    <div class="project-details">
+                    <div class="picture-wrapper">
+                        <picture>
+                            <source srcset="<%= require('./images/3yourmind.png?format=avif') %>" type="image/avif">
+                            <source srcset="<%= require('./images/3yourmind.png?format=webp') %>" type="image/webp">
+                            <source srcset="<%= require('./images/3yourmind.png') %>" type="image/png">
+                            <img class="project-img object-bottom" src="<%= require('./images/3yourmind.png').placeholder %>" alt="screenshots of the 3YOURMIND website" loading="lazy" width="338" height="219">
+                        </picture>
+                    </div>
+                    <div class="project-details lg:pl-0">
                         <h3>3YOURMIND</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <ul>
