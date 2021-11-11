@@ -87,7 +87,7 @@ module.exports = {
     },
     devServer: {
         watchFiles: [
-            'src/*.html',
+            'src/**/*.html',
             'src/*.scss',
             'src/images/*'
         ],

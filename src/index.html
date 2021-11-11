@@ -9,16 +9,21 @@
     <title>Florian Strasser - Frontend Development & Web Design Portfolio</title>
 </head>
 
-<body class="bg-purple-dark text-white text-opacity-80 leading-relaxed">
-    <nav class="py-4">
-        <ul class="flex flex-wrap gap-1">
-            <li><a href="/">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills&nbsp;&&nbsp;Tools</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+<body class="bg-purple-dark text-white text-opacity-80 leading-relaxed pt-20">
+    <nav>
+        <div class="flex py-4 items-center">
+            <a class="flex -ml-4" href="/" title="Home" aria-label="Home">
+                <%= require('html-loader!./partials/logo.svg.html').default %>
+            </a>
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills&nbsp;&&nbsp;Tools</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main>

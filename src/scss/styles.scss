@@ -70,12 +70,20 @@
         content: '\200B'; // add zero-width space
     }
 
-    nav a {
-        @apply px-4 py-2 rounded-md transition-all hover:text-white focus-visible:ring-2;
+    nav {
+        @apply fixed w-full top-0 bg-purple-dark bg-opacity-90 z-10;
 
-        &:hover {
-            @apply bg-purple bg-opacity-10;
-            font-variation-settings: var(--whgt-bold);
+        ul {
+            @apply flex gap-1;
+        }
+
+        a {
+            @apply px-4 py-2 rounded-md transition-all hover:text-white focus-visible:ring-2;
+
+            &:hover {
+                @apply bg-purple bg-opacity-10;
+                font-variation-settings: var(--whgt-bold);
+            }
         }
     }
 }
