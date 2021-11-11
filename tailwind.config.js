@@ -2,7 +2,10 @@ const colors = require('tailwindcss/colors');
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.html'],
+  purge: [
+    './src/**/*.html',
+    './src/**/*.js'
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -37,6 +40,7 @@ module.exports = {
       flex: {
         // golden: '1 0 38.2%',
         golden: '1 0 61.8%',
+        full: '0 1 100%',
       }
     }
   },

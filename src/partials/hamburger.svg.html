@@ -1,0 +1,32 @@
+<svg width="36" height="36" fill="none">
+    <style>
+        .hamburger-line {
+            opacity: 1;
+            transform-origin: center;
+            transform: rotate(0) translateY(0) scale(1, 1);
+            transition: all .2s ease-in-out
+        }
+
+        [aria-expanded=true] #hamburger-top {
+            opacity: 0;
+            transform: rotate(0) translateY(22%) scale(0, 1)
+        }
+
+        [aria-expanded=true] #hamburger-bottom {
+            opacity: 0;
+            transform: rotate(0) translateY(-22%) scale(0, 1)
+        }
+
+        [aria-expanded=true] #hamburger-center-1 {
+            transform: rotate(45deg)
+        }
+
+        [aria-expanded=true] #hamburger-center-2 {
+            transform: rotate(-45deg)
+        }
+    </style>
+    <path id="hamburger-top" class="hamburger-line" stroke="currentColor" stroke-width="1.5" d="M3 9.75h30" />
+    <path id="hamburger-center-1" class="hamburger-line" stroke="currentColor" stroke-width="1.5" d="M3 17.75h30" />
+    <path id="hamburger-center-2" class="hamburger-line" stroke="currentColor" stroke-width="1.5" d="M3 17.75h30" />
+    <path id="hamburger-bottom" class="hamburger-line" stroke="currentColor" stroke-width="1.5" d="M3 25.75h30" />
+</svg>

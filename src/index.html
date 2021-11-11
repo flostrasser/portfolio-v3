@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 
 <head>
     <meta charset="UTF-8">
@@ -9,14 +9,18 @@
     <title>Florian Strasser - Frontend Development & Web Design Portfolio</title>
 </head>
 
-<body class="bg-purple-dark text-white text-opacity-80 leading-relaxed pt-20">
+<body class="overflow-x-hidden bg-purple-dark text-white text-opacity-80 leading-relaxed pt-20">
     <nav>
-        <div class="flex py-4 items-center">
-            <a class="flex -ml-4" href="/" title="Home" aria-label="Home">
+        <div class="nav-container">
+            <a class="flex -ml-4" href="/#" title="Home" aria-label="Home">
                 <%= require('html-loader!./partials/logo.svg.html').default %>
             </a>
 
-            <ul>
+            <button type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="toggle navigation">
+                <%= require('html-loader!./partials/hamburger.svg.html').default %>
+            </button>
+
+            <ul id="navbarNav">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills&nbsp;&&nbsp;Tools</a></li>
                 <li><a href="#experience">Experience</a></li>
