@@ -85,7 +85,7 @@
             @apply gap-1 flex flex-col md:flex-row flex-full md:flex-initial;
             @apply space-y-6 md:space-y-0 -ml-5 pl-1 md:ml-0 md:pl-0;
             @apply text-xl md:text-base;
-            @apply transition-all md:transition-none h-0 md:h-auto overflow-hidden;
+            @apply transition-all md:transition-none h-0 md:h-auto overflow-hidden md:overflow-visible;
         }
 
         &.expanded {
@@ -98,10 +98,11 @@
 
         a,
         button {
-            @apply px-4 py-2 rounded-md transition-all hover:text-white focus-visible:ring-2;
+            @apply px-4 py-2 rounded-md transition-all;
+            @apply hover:text-white hover:bg-purple hover:bg-opacity-10;
+            @apply focus-visible:ring-purple focus-visible:ring-2 focus-visible:outline-none;
 
             &:hover {
-                @apply bg-purple bg-opacity-10;
                 font-variation-settings: var(--whgt-bold);
             }
         }
@@ -113,6 +114,7 @@
 
     .btn {
         @apply inline-flex items-center space-x-2 font-mono px-6 py-3 border-white border rounded-md hover:bg-white hover:text-purple-dark transition-colors;
+        @apply focus-visible:ring-4 ring-purple outline-none;
     }
 
     .btn-sm {
