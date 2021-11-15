@@ -37,16 +37,25 @@
                 <span class="text-bg-gradient">Florian Strasser.</span><br>
                 I make websites.
             </h1>
+
             <p class="sm:text-xl max-w-2xl mb-6 leading-relaxed">
                 I’m a multi-disciplinary <strong class="text-white">frontend developer</strong> & <strong class="text-white">web designer</strong> with a keen eye for details.
                 I focus on fast and accessible web experiences.
             </p>
-            <p class="sm:text-xl max-w-2xl mb-8 leading-relaxed">
+
+            <p class="sm:text-xl max-w-2xl mb-4 leading-relaxed">
                 I have worked as a web & <strong class="text-white">graphic designer</strong> at 3YOURMIND, then shifted my focus to <strong class="text-white">web development</strong>.
                 At Allod MediaC2, I was leading the design and development of websites
                 for customers like Reggeborgh, Taurecon, and Groth Gruppe.
             </p>
-            <a href="#projects" class="btn">View Projects</a>
+
+            <div class="space-y-4">
+                <a href="#projects" class="btn mr-4 bg-gradient-to-tr from-purple to-tangerine hover:from-purple hover:to-blue hover:text-white border-transparent text-purple-dark font-bold">View Projects</a>
+                <a href="#" class="btn">
+                    <span>Download CV</span>
+                    <%= require('html-loader!./partials/icon-download.svg.html').default %>
+                </a>
+            </div>
         </section>
 
         <section id="skills">
@@ -129,6 +138,7 @@
                         </ul>
                         <a class="btn btn-sm" href="https://www.miru-potsdam.de" target="_blank" rel="noreferrer">
                             <span>View Website</span>
+                            <span class="sr-only">(opens in a new tab)</span>
                             <%= require('html-loader!./partials/icon-launch.svg.html').default %>
                         </a>
                     </div>
@@ -152,6 +162,7 @@
                         </ul>
                         <a class="btn btn-sm" href="https://www.mybay.berlin" target="_blank" rel="noreferrer">
                             <span>View Website</span>
+                            <span class="sr-only">(opens in a new tab)</span>
                             <%= require('html-loader!./partials/icon-launch.svg.html').default %>
                         </a>
                     </div>
@@ -175,6 +186,7 @@
                         </ul>
                         <a class="btn btn-sm" href="https://www.qh-living.com" target="_blank" rel="noreferrer">
                             <span>View Website</span>
+                            <span class="sr-only">(opens in a new tab)</span>
                             <%= require('html-loader!./partials/icon-launch.svg.html').default %>
                         </a>
                     </div>
@@ -197,6 +209,7 @@
                         </ul>
                         <a class="btn btn-sm" href="https://teleclap.org" target="_blank" rel="noreferrer">
                             <span>View Website</span>
+                            <span class="sr-only">(opens in a new tab)</span>
                             <%= require('html-loader!./partials/icon-launch.svg.html').default %>
                         </a>
                     </div>
@@ -220,6 +233,7 @@
                         </ul>
                         <a class="btn btn-sm" href="https://github.com/flostrasser/flex-gallery" target="_blank" rel="noreferrer">
                             <span>View Repository</span>
+                            <span class="sr-only">(opens in a new tab)</span>
                             <%= require('html-loader!./partials/icon-launch.svg.html').default %>
                         </a>
                     </div>
@@ -243,6 +257,7 @@
                         </ul>
                         <a class="btn btn-sm" href="https://www.3yourmind.com/" target="_blank" rel="noreferrer">
                             <span>View Website</span>
+                            <span class="sr-only">(opens in a new tab)</span>
                             <%= require('html-loader!./partials/icon-launch.svg.html').default %>
                         </a>
                     </div>

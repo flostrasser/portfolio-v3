@@ -115,6 +115,10 @@
     .btn {
         @apply inline-flex items-center space-x-2 font-mono px-6 py-3 border-white border rounded-md hover:bg-white hover:text-purple-dark transition-colors;
         @apply focus-visible:ring-4 ring-purple outline-none;
+
+        // fix for bg-gradient
+        @apply bg-no-repeat bg-center;
+        background-size: calc(100% + 2px) calc(100% + 2px);
     }
 
     .btn-sm {
