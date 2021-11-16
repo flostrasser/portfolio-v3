@@ -18,6 +18,9 @@ function initNavbar() {
     navLinks.forEach(navLink => navLink.addEventListener('click', e => {
         nav.classList.remove('expanded');
         navbarToggler.setAttribute('aria-expanded', false);
+
+        // scroll element into view
+        smoothScrollIntoView(e);
     }));
 
     // close navbar when clicking outside the nav
@@ -35,8 +38,9 @@ function initNavbar() {
         const currentScrollPos = document.documentElement.scrollTop;
         const isBelowThreshold = currentScrollPos > scrollPosThreshold;
         const isNavbarExpanded = nav.classList.contains('expanded');
+        const isPreventSlideUp = nav.classList.contains('no-slide-up');
 
-        if (currentScrollPos > prevScrollPos && isBelowThreshold && !isNavbarExpanded) {
+        if (currentScrollPos > prevScrollPos && isBelowThreshold && !isNavbarExpanded && !isPreventSlideUp) {
             nav.classList.add('slide-up'); // hide
 
         } else if (currentScrollPos < prevScrollPos) {
@@ -45,4 +49,30 @@ function initNavbar() {
 
         prevScrollPos = currentScrollPos;
     });
+}
+
+let noSlideUpCounter = 0;
+
+function smoothScrollIntoView(e) {
+    const nav = document.querySelector('body > nav');
+    const targetEl = document.querySelector(e.currentTarget.hash || 'body');
+
+    if (!targetEl) return;
+
+    targetEl.scrollIntoView({
+        behavior: "smooth"
+    });
+
+    nav.classList.add('no-slide-up');
+    noSlideUpCounter++;
+
+    window.setTimeout(() => {
+        if (noSlideUpCounter <= 1) {
+            nav.classList.remove('no-slide-up');
+        }
+
+        noSlideUpCounter--;
+    }, 1000);
+
+    e.preventDefault();
 }
