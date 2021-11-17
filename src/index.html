@@ -267,7 +267,13 @@
 
         <section id="contact">
             <h2 class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Contact</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis saepe sit cumque optio doloribus. Placeat incidunt blanditiis iste iure quam!</p>
+            <h3 class="text-xl sm:text-2xl">Say hello!</h3>
+            <p class="text-lg">I'm currently open to new opportunities in Berlin or remote.</p>
+            <p class="text-lg mb-6">Contact me on <a class="underline hover:whgt-bold hover:text-blue" href="https://www.linkedin.com/in/florian-strasser/" target="_blank" rel="noreferrer">LinkedIn</a> or drop me a line with the button below.</p>
+            <button class="btn send-mail-btn">
+                <span>Send Email</span>
+                <%= require('html-loader!./partials/paper-plane.svg.html').default %>
+            </button>
         </section>
     </main>
 

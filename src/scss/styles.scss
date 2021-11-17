@@ -234,4 +234,10 @@
             aspect-ratio: 3 / 2;
         }
     }
+
+    @variants focus, hover {
+        .whgt-bold {
+            font-variation-settings: var(--whgt-bold);
+        }
+    }
 }

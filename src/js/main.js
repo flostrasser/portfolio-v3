@@ -1,6 +1,7 @@
 import '../scss/styles.scss';
 
 initNavbar();
+initEmailBtn();
 
 function initNavbar() {
     const nav = document.querySelector('body > nav');
@@ -75,4 +76,15 @@ function smoothScrollIntoView(e) {
     }, 1000);
 
     e.preventDefault();
+}
+
+function initEmailBtn() {
+    const mailto = String('mailto:infoatflorianstrasserdotcom')
+        .replace('at', '@')
+        .replace('dot', '.');
+
+    const sendMailBtn = document.querySelector('.send-mail-btn');
+    sendMailBtn.addEventListener('click', e => {
+        window.location.href = mailto
+    });
 }
