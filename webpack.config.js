@@ -1,7 +1,8 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -49,6 +50,12 @@ module.exports = {
             pngquant: {
                 quality: '60-75'
             }
+        }),
+        // copy static files
+        new CopyPlugin({
+            patterns: [
+                { from: './src/static', to: '.' },
+            ],
         }),
     ],
     module: {

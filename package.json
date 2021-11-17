@@ -7,6 +7,7 @@
   },
   "private": true,
   "devDependencies": {
+    "copy-webpack-plugin": "^9.1.0",
     "css-loader": "^6.5.0",
     "favicons-webpack-plugin": "^5.0.2",
     "html-loader": "^3.0.1",
