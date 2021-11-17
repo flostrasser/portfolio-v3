@@ -267,13 +267,36 @@
 
         <section id="contact">
             <h2 class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Contact</h2>
-            <h3 class="text-xl sm:text-2xl">Say hello!</h3>
-            <p class="text-lg">I'm currently open to new opportunities in Berlin or remote.</p>
-            <p class="text-lg mb-6">Contact me on <a class="underline hover:whgt-bold hover:text-blue" href="https://www.linkedin.com/in/florian-strasser/" target="_blank" rel="noreferrer">LinkedIn</a> or drop me a line with the button below.</p>
-            <button class="btn send-mail-btn">
+
+            <h3 class="text-xl sm:text-2xl mb-2">Say hello!</h3>
+            <p class="sm:text-lg">I'm currently open to new opportunities in Berlin or remote.</p>
+            <p class="sm:text-lg mb-6">Contact me on <a class="link" href="https://www.linkedin.com/in/florian-strasser/" target="_blank" rel="noreferrer">LinkedIn</a> or drop me a line with the button below.</p>
+            <button class="btn send-mail-btn mb-12">
                 <span>Send Email</span>
                 <%= require('html-loader!./partials/paper-plane.svg.html').default %>
             </button>
+
+            <h3 class="text-xl sm:text-2xl mb-2">Find me here:</h3>
+            <ul class="sm:text-lg">
+                <li>
+                    <a class="link inline-flex items-center" href="https://www.linkedin.com/in/florian-strasser/">
+                        <%= require('html-loader!./partials/linkedin.svg.html').default %>
+                            <span class="ml-2">linkedin.com/in/florian-strasser</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="link inline-flex items-center" href="https://github.com/flostrasser">
+                        <%= require('html-loader!./partials/github.svg.html').default %>
+                            <span class="ml-2">github.com/flostrasser</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="link inline-flex items-center" href="https://codepen.io/flostrasser">
+                        <%= require('html-loader!./partials/codepen.svg.html').default %>
+                            <span class="ml-2">codepen.io/flostrasser</span>
+                    </a>
+                </li>
+            </ul>
         </section>
     </main>
 

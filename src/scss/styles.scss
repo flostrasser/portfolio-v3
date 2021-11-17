@@ -221,6 +221,10 @@
         }
     }
 
+    .link {
+        @apply underline hover:whgt-bold hover:text-blue;
+    }
+
     .content-empty {
         content: '';
     }
