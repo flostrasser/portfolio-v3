@@ -8,7 +8,13 @@
 
 ## Getting Started
 
-build
+build dev bundle
+
+```
+npm run build:dev
+```
+
+build production bundle
 
 ```
 npm run build
@@ -18,6 +24,12 @@ run dev server
 
 ```
 npm run serve
+```
+
+serve production bundle
+
+```
+npm run build && npx serve dist
 ```
 
 ## Project Structure
