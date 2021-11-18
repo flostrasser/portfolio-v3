@@ -9,6 +9,7 @@
             url('../fonts/PT-Root-UI/PT-Root-UI_VF.woff') format('woff');
         font-weight: normal;
         font-style: normal;
+        font-display: swap;
     }
 
     @font-face {
@@ -17,6 +18,7 @@
             url('../fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff') format('woff');
         font-weight: 400;
         font-style: normal;
+        font-display: swap;
     }
 
     :root {
