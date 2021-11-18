@@ -30,6 +30,7 @@ root folder
 │   ├── images/     <-- images to be optimized and exported
 │   ├── js/         <-- javascript files
 │   ├── scss/       <-- styles
+│   ├── static/     <-- static files (copied directly to dist folder)
 │   └── index.html  <-- index page
 ...
 ```
