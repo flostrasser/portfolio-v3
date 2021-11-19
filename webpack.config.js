@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
@@ -24,6 +25,7 @@ module.exports = (env, argv) => {
             new HtmlWebpackPlugin({
                 template: './src/index.html',
                 hash: true,
+                scriptLoading: 'module',
             }),
             // generate favicons and link them in index.html
             new FaviconsWebpackPlugin({
@@ -66,6 +68,13 @@ module.exports = (env, argv) => {
         module: {
             rules: [
                 {
+                    test: /\.m?js$/,
+                    include: __dirname + '/src',
+                    use: [
+                        'babel-loader',
+                    ],
+                },
+                {
                     test: /\.scss$/i,
                     use: [
                         MiniCssExtractPlugin.loader,
@@ -102,7 +111,8 @@ module.exports = (env, argv) => {
         },
         optimization: {
             minimizer: [
-                new CssMinimizerPlugin()
+                new CssMinimizerPlugin(),
+                new TerserPlugin(),
             ],
         },
         devServer: {
