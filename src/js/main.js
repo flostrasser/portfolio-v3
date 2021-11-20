@@ -1,6 +1,7 @@
 import '../scss/styles.scss';
 
 initNavbar();
+initSmoothScrollIntoView();
 initEmailBtn();
 
 function initNavbar() {
@@ -19,9 +20,6 @@ function initNavbar() {
     navLinks.forEach(navLink => navLink.addEventListener('click', e => {
         nav.classList.remove('expanded');
         navbarToggler.setAttribute('aria-expanded', false);
-
-        // scroll element into view
-        smoothScrollIntoView(e);
     }));
 
     // close navbar when clicking outside the nav
@@ -52,30 +50,34 @@ function initNavbar() {
     });
 }
 
-let noSlideUpCounter = 0;
-
-function smoothScrollIntoView(e) {
+function initSmoothScrollIntoView() {
     const nav = document.querySelector('body > nav');
-    const targetEl = document.querySelector(e.currentTarget.hash || 'body');
+    const internalHashLinks = document.querySelectorAll('a[href^="#"]');
 
-    if (!targetEl) return;
+    let noSlideUpCounter = 0;
 
-    targetEl.scrollIntoView({
-        behavior: "smooth"
-    });
+    internalHashLinks.forEach(link => link.addEventListener('click', e => {
+        const targetEl = document.querySelector(e.currentTarget.hash || 'body');
 
-    nav.classList.add('no-slide-up');
-    noSlideUpCounter++;
+        if (!targetEl) return;
 
-    window.setTimeout(() => {
-        if (noSlideUpCounter <= 1) {
-            nav.classList.remove('no-slide-up');
-        }
+        targetEl.scrollIntoView({
+            behavior: "smooth"
+        });
 
-        noSlideUpCounter--;
-    }, 1000);
+        nav.classList.add('no-slide-up');
+        noSlideUpCounter++;
 
-    e.preventDefault();
+        window.setTimeout(() => {
+            if (noSlideUpCounter <= 1) {
+                nav.classList.remove('no-slide-up');
+            }
+
+            noSlideUpCounter--;
+        }, 1000);
+
+        e.preventDefault();
+    }));
 }
 
 function initEmailBtn() {
@@ -84,7 +86,8 @@ function initEmailBtn() {
         .replace('dot', '.');
 
     const sendMailBtn = document.querySelector('.send-mail-btn');
+
     sendMailBtn.addEventListener('click', e => {
-        window.location.href = mailto
+        window.location.href = mailto;
     });
 }
