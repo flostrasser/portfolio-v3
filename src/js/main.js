@@ -1,7 +1,7 @@
 import '../scss/styles.scss';
 
 initNavbar();
-initSmoothScrollIntoView();
+initSmoothScrollToTarget();
 initEmailBtn();
 
 function initNavbar() {
@@ -50,7 +50,7 @@ function initNavbar() {
     });
 }
 
-function initSmoothScrollIntoView() {
+function initSmoothScrollToTarget() {
     const nav = document.querySelector('body > nav');
     const internalHashLinks = document.querySelectorAll('a[href^="/#"]');
 
@@ -61,7 +61,12 @@ function initSmoothScrollIntoView() {
 
         if (!targetEl) return;
 
-        targetEl.scrollIntoView({
+        const offset = 35;
+        const targetElPosTop = targetEl.getBoundingClientRect().top;
+        const offsetPosition = targetElPosTop + document.documentElement.scrollTop - offset;
+
+        window.scrollTo({
+            top: offsetPosition,
             behavior: "smooth"
         });
 
