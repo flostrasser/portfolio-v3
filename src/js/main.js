@@ -52,7 +52,7 @@ function initNavbar() {
 
 function initSmoothScrollIntoView() {
     const nav = document.querySelector('body > nav');
-    const internalHashLinks = document.querySelectorAll('a[href^="#"]');
+    const internalHashLinks = document.querySelectorAll('a[href^="/#"]');
 
     let noSlideUpCounter = 0;
 
