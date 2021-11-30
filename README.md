@@ -1,5 +1,7 @@
 # Personal Portfolio Website @ florianstrasser.com
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9323e905-d682-4b5b-9172-31a313255ef9/deploy-status)](https://app.netlify.com/sites/florianstrasser/deploys)
+
 ## Tech Stack
 
 -   [npm](https://www.npmjs.com/)
