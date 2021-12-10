@@ -1,19 +1,16 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  mode: 'jit',
-  purge: [
-    './src/**/*.html',
-    './src/**/*.js'
+  content: [
+    './src/**/*.{html,js}',
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,
       white: colors.white,
-      gray: colors.trueGray,
+      gray: colors.neutral,
       purple: {
         DEFAULT: '#6e7eff',
         dark: '#101326',
@@ -45,12 +42,8 @@ module.exports = {
       flex: {
         // golden: '1 0 38.2%',
         golden: '1 0 61.8%',
-        full: '0 1 100%',
-      }
+      },
     }
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }
