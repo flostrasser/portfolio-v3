@@ -2,310 +2,340 @@
 <html lang="en" class="overflow-x-hidden">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Florian Strasser is a Frontend Developer & Web Designer based in Berlin.">
+  <meta name="description" content="Florian Strasser is a Frontend Developer & Web Designer based in Berlin.">
 
-    <title>Florian Strasser - Frontend Development & Web Design Portfolio</title>
+  <title>Florian Strasser - Frontend Development & Web Design Portfolio</title>
 </head>
 
 <body class="overflow-x-hidden bg-purple-dark text-white text-opacity-80 leading-relaxed pt-20">
-    <nav>
-        <div class="nav-container">
-            <a class="flex -ml-4" href="/#" title="Home" aria-label="Home">
-                <%= require('html-loader!./partials/logo.svg.html').default %>
-            </a>
+  <nav>
+    <div class="nav-container">
+      <a class="flex -ml-4" href="/#" title="Home" aria-label="Home">
+        <%= require('html-loader!./partials/logo.svg.html').default %>
+      </a>
 
-            <button type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="toggle navigation">
-                <%= require('html-loader!./partials/hamburger.svg.html').default %>
-            </button>
+      <button type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="toggle navigation">
+        <%= require('html-loader!./partials/hamburger.svg.html').default %>
+      </button>
 
-            <ul id="navbarNav">
-                <li><a href="/#about">About</a></li>
-                <li><a href="/#skills">Skills&nbsp;&&nbsp;Tools</a></li>
-                <li><a href="/#experience">Experience</a></li>
-                <li><a href="/#projects">Projects</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
+      <ul id="navbarNav">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#skills">Skills&nbsp;&&nbsp;Tools</a></li>
+        <li><a href="/#experience">Experience</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h1 class="grid text-4xl sm:text-6xl md:text-8xl mb-8 sm:mb-16">
+        <span class="text-xl sm:text-2xl">Hello, I'm</span>
+        <span class="text-bg-gradient">Florian Strasser.</span>
+        <span>I make websites.</span>
+      </h1>
+
+      <p class="sm:text-xl max-w-2xl mb-6 leading-relaxed">
+        I’m a multi-disciplinary <strong class="text-white">frontend developer</strong> & <strong
+                class="text-white">web designer</strong> with a keen eye for details.
+        I focus on fast and accessible web experiences.
+      </p>
+
+      <p class="sm:text-xl max-w-2xl mb-4 leading-relaxed">
+        I have worked as a web & <strong class="text-white">graphic designer</strong> at 3YOURMIND, then shifted
+        my focus to <strong class="text-white">web development</strong>.
+        At Allod MediaC2, I was leading the design and development of websites
+        for customers like Reggeborgh, Taurecon, and Groth Gruppe.
+      </p>
+
+      <div class="space-y-4">
+        <a href="/#projects"
+           class="btn mr-4 bg-gradient-to-tr from-purple to-tangerine hover:from-purple hover:to-blue hover:text-white border-transparent text-purple-dark">View
+          Projects</a>
+        <a href="/CV_Florian_Strasser.pdf" class="btn" target="_blank">
+          <span>Download CV</span>
+          <%= require('html-loader!./partials/icon-download.svg.html').default %>
+        </a>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Skills & Tools</h2>
+      <div
+           class="grid w-full grid-cols-[repeat(auto-fill,9rem)] gap-x-24 gap-y-8 font-mono sm:text-lg leading-loose">
+        <ul>
+          <li>JavaScript</li>
+          <li>HTML/CSS</li>
+          <li>SCSS</li>
+          <li>C#/.NET Core</li>
+        </ul>
+        <ul>
+          <li>Tailwind CSS</li>
+          <li>Eleventy</li>
+          <li>Bootstrap</li>
+          <li>Vue.js</li>
+        </ul>
+        <ul>
+          <li>Git</li>
+          <li>npm</li>
+          <li>Webpack</li>
+        </ul>
+        <ul>
+          <li>VS Code</li>
+          <li>Figma</li>
+          <li>Adobe CC</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Experience</h2>
+      <div>
+        <div class="experience-item">
+          <h3>Frontend Developer & Web Designer @&nbsp;Allod MediaC2</h3>
+          <h4>2019 - 2021 / Berlin, Germany</h4>
+          <ul class="list">
+            <li>Leading several web projects from design to implementation, including wireframing &
+              prototyping, UX design, frontend and .NET development.</li>
+            <li>Working with a variety of languages, frameworks, and tools such as JavaScript, SCSS,
+              C#/.NET, Eleventy, Bootstrap, Tailwind CSS, and Webpack.</li>
+            <li>Communicating with various stakeholders from backend development, graphic design, and
+              clients on a daily basis.</li>
+          </ul>
         </div>
-    </nav>
+        <div class="experience-item">
+          <h3>Graphic & Web Designer @&nbsp;3YOURMIND</h3>
+          <h4>2016 - 2018 / Berlin, Germany</h4>
+          <ul class="list">
+            <li>Organized design sprints and allocated design tasks in the team. Responsible for branding
+              and online/offline marketing materials.</li>
+            <li>Created icons, graphics, mockups, wireframes, and landing pages with Adobe CC, HTML, CSS,
+              and JavaScript.</li>
+            <li>Developed a custom HubSpot CMS theme and created templates in Django for the development
+              team.</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <h3>Design Intern @&nbsp;3YOURMIND</h3>
+          <h4>2016 / Berlin, Germany</h4>
+          <ul class="list">
+            <li>Created various online/offline marketing materials, icons, graphics, mockups, wireframes,
+              and landing pages with Adobe CC, HTML, CSS, and JavaScript.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <main>
-        <section id="about">
-            <h1 class="grid text-4xl sm:text-6xl md:text-8xl mb-8 sm:mb-16">
-                <span class="text-xl sm:text-2xl">Hello, I'm</span>
-                <span class="text-bg-gradient">Florian Strasser.</span>
-                <span>I make websites.</span>
-            </h1>
-
-            <p class="sm:text-xl max-w-2xl mb-6 leading-relaxed">
-                I’m a multi-disciplinary <strong class="text-white">frontend developer</strong> & <strong class="text-white">web designer</strong> with a keen eye for details.
-                I focus on fast and accessible web experiences.
-            </p>
-
-            <p class="sm:text-xl max-w-2xl mb-4 leading-relaxed">
-                I have worked as a web & <strong class="text-white">graphic designer</strong> at 3YOURMIND, then shifted my focus to <strong class="text-white">web development</strong>.
-                At Allod MediaC2, I was leading the design and development of websites
-                for customers like Reggeborgh, Taurecon, and Groth Gruppe.
-            </p>
-
-            <div class="space-y-4">
-                <a href="/#projects" class="btn mr-4 bg-gradient-to-tr from-purple to-tangerine hover:from-purple hover:to-blue hover:text-white border-transparent text-purple-dark">View Projects</a>
-                <a href="/CV_Florian_Strasser.pdf" class="btn" target="_blank">
-                    <span>Download CV</span>
-                    <%= require('html-loader!./partials/icon-download.svg.html').default %>
-                </a>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2 class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Skills & Tools</h2>
-            <div class="grid w-full grid-cols-[repeat(auto-fill,9rem)] gap-x-24 gap-y-8 font-mono sm:text-lg leading-loose">
-                <ul>
-                    <li>JavaScript</li>
-                    <li>HTML/CSS</li>
-                    <li>SCSS</li>
-                    <li>C#/.NET Core</li>
-                </ul>
-                <ul>
-                    <li>Tailwind CSS</li>
-                    <li>Eleventy</li>
-                    <li>Bootstrap</li>
-                    <li>Vue.js</li>
-                </ul>
-                <ul>
-                    <li>Git</li>
-                    <li>npm</li>
-                    <li>Webpack</li>
-                </ul>
-                <ul>
-                    <li>VS Code</li>
-                    <li>Figma</li>
-                    <li>Adobe CC</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2 class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Experience</h2>
-            <div>
-                <div class="experience-item">
-                    <h3>Frontend Developer & Web Designer @&nbsp;Allod MediaC2</h3>
-                    <h4>2019 - 2021 / Berlin, Germany</h4>
-                    <ul class="list">
-                        <li>Leading several web projects from design to implementation, including wireframing & prototyping, UX design, frontend and .NET development.</li>
-                        <li>Working with a variety of languages, frameworks, and tools such as JavaScript, SCSS, C#/.NET, Eleventy, Bootstrap, Tailwind CSS, and Webpack.</li>
-                        <li>Communicating with various stakeholders from backend development, graphic design, and clients on a daily basis.</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>Graphic & Web Designer @&nbsp;3YOURMIND</h3>
-                    <h4>2016 - 2018 / Berlin, Germany</h4>
-                    <ul class="list">
-                        <li>Organized design sprints and allocated design tasks in the team. Responsible for branding and online/offline marketing materials.</li>
-                        <li>Created icons, graphics, mockups, wireframes, and landing pages with Adobe CC, HTML, CSS, and JavaScript.</li>
-                        <li>Developed a custom HubSpot CMS theme and created templates in Django for the development team.</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h3>Design Intern @&nbsp;3YOURMIND</h3>
-                    <h4>2016 / Berlin, Germany</h4>
-                    <ul class="list">
-                        <li>Created various online/offline marketing materials, icons, graphics, mockups, wireframes, and landing pages with Adobe CC, HTML, CSS, and JavaScript.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2 class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Projects</h2>
-            <div class="grid gap-8">
-                <div class="project-item featured bg-miru">
-                    <div class="picture-wrapper">
-                        <picture>
-                            <source srcset="<%= require('./images/miru.png?format=avif') %>" type="image/avif">
-                            <source srcset="<%= require('./images/miru.png?format=webp') %>" type="image/webp">
-                            <source srcset="<%= require('./images/miru.png') %>" type="image/png">
-                            <img class="project-img" src="<%= require('./images/miru.png').placeholder %>" alt="screenshots of the MIRU website" loading="lazy" width="338" height="135">
-                        </picture>
-                    </div>
-                    <div class="project-details">
-                        <h3>MIRU</h3>
-                        <p>For one of my last website projects - a real estate marketing website, I created a custom data-table and range-slider implementation.</p>
-                        <ul>
-                            <li>Tailwind CSS</li>
-                            <li>Eleventy</li>
-                        </ul>
-                        <a class="btn btn-sm" href="https://www.miru-potsdam.de" target="_blank" rel="noreferrer">
-                            <span>View Website</span>
-                            <span class="sr-only">(opens in a new tab)</span>
-                            <%= require('html-loader!./partials/icon-launch.svg.html').default %>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-item bg-mybay">
-                    <div class="picture-wrapper">
-                        <picture>
-                            <source srcset="<%= require('./images/mybay.png?format=avif') %>" type="image/avif">
-                            <source srcset="<%= require('./images/mybay.png?format=webp') %>" type="image/webp">
-                            <source srcset="<%= require('./images/mybay.png') %>" type="image/png">
-                            <img class="project-img" src="<%= require('./images/mybay.png').placeholder %>" alt="screenshots of the MY BAY website" loading="lazy" width="338" height="219">
-                        </picture>
-                    </div>
-                    <div class="project-details lg:pl-0">
-                        <h3>MY BAY</h3>
-                        <p>MY BAY is a multi-language website with an interactive floor search and personalized content.</p>
-                        <ul>
-                            <li>Bootstrap</li>
-                            <li>.NET Core</li>
-                        </ul>
-                        <a class="btn btn-sm" href="https://www.mybay.berlin" target="_blank" rel="noreferrer">
-                            <span>View Website</span>
-                            <span class="sr-only">(opens in a new tab)</span>
-                            <%= require('html-loader!./partials/icon-launch.svg.html').default %>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-item bg-qhliving">
-                    <div class="picture-wrapper">
-                        <picture>
-                            <source srcset="<%= require('./images/qh-living.png?format=avif') %>" type="image/avif">
-                            <source srcset="<%= require('./images/qh-living.png?format=webp') %>" type="image/webp">
-                            <source srcset="<%= require('./images/qh-living.png') %>" type="image/png">
-                            <img class="project-img object-bottom" src="<%= require('./images/qh-living.png').placeholder %>" alt="screenshots of the QH-LIVING website" loading="lazy" width="338" height="219">
-                        </picture>
-                    </div>
-                    <div class="project-details lg:order-first lg:pr-0">
-                        <h3>QH-LIVING</h3>
-                        <p>QH-LIVING is a colorful multi-language real estate marketing website with extensive use of CSS grid.</p>
-                        <ul>
-                            <li>Bootstrap</li>
-                            <li>.NET Core</li>
-                        </ul>
-                        <a class="btn btn-sm" href="https://www.qh-living.com" target="_blank" rel="noreferrer">
-                            <span>View Website</span>
-                            <span class="sr-only">(opens in a new tab)</span>
-                            <%= require('html-loader!./partials/icon-launch.svg.html').default %>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-item bg-teleclap">
-                    <div class="picture-wrapper">
-                        <picture>
-                            <source srcset="<%= require('./images/teleclap.png?format=avif') %>" type="image/avif">
-                            <source srcset="<%= require('./images/teleclap.png?format=webp') %>" type="image/webp">
-                            <source srcset="<%= require('./images/teleclap.png') %>" type="image/png">
-                            <img class="project-img object-bottom" src="<%= require('./images/teleclap.png').placeholder %>" alt="screenshots of the TeleClap web app" loading="lazy" width="338" height="219">
-                        </picture>
-                    </div>
-                    <div class="project-details lg:pl-0">
-                        <h3>TeleClap</h3>
-                        <p>A side-project created together with friends. I was working on branding, web design, and front-end development.</p>
-                        <ul>
-                            <li>Vue.js</li>
-                        </ul>
-                        <a class="btn btn-sm" href="https://teleclap.org" target="_blank" rel="noreferrer">
-                            <span>View Website</span>
-                            <span class="sr-only">(opens in a new tab)</span>
-                            <%= require('html-loader!./partials/icon-launch.svg.html').default %>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-item bg-flexgallery">
-                    <div class="picture-wrapper">
-                        <picture>
-                            <source srcset="<%= require('./images/flex-gallery.png?format=avif') %>" type="image/avif">
-                            <source srcset="<%= require('./images/flex-gallery.png?format=webp') %>" type="image/webp">
-                            <source srcset="<%= require('./images/flex-gallery.png') %>" type="image/png">
-                            <img class="project-img" src="<%= require('./images/flex-gallery.png').placeholder %>" alt="screenshots of the flexbox project" loading="lazy" width="338" height="219">
-                        </picture>
-                    </div>
-                    <div class="project-details lg:order-first lg:pr-0">
-                        <h3>flex-gallery</h3>
-                        <p>Flex-Gallery is an open-source responsive lightbox gallery with flexbox and progressive image loading written in JavaScript and SCSS.</p>
-                        <ul>
-                            <li>flexbox</li>
-                            <li>progressive image loading</li>
-                        </ul>
-                        <a class="btn btn-sm" href="https://github.com/flostrasser/flex-gallery" target="_blank" rel="noreferrer">
-                            <span>View Repository</span>
-                            <span class="sr-only">(opens in a new tab)</span>
-                            <%= require('html-loader!./partials/icon-launch.svg.html').default %>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-item bg-threeyourmind">
-                    <div class="picture-wrapper">
-                        <picture>
-                            <source srcset="<%= require('./images/3yourmind.png?format=avif') %>" type="image/avif">
-                            <source srcset="<%= require('./images/3yourmind.png?format=webp') %>" type="image/webp">
-                            <source srcset="<%= require('./images/3yourmind.png') %>" type="image/png">
-                            <img class="project-img object-bottom" src="<%= require('./images/3yourmind.png').placeholder %>" alt="screenshots of the 3YOURMIND website" loading="lazy" width="338" height="219">
-                        </picture>
-                    </div>
-                    <div class="project-details lg:pl-0">
-                        <h3>3YOURMIND</h3>
-                        <p>At my first full-time job, I led a major redesign and the development of their marketing website.</p>
-                        <ul>
-                            <li>Bootstrap</li>
-                            <li>HubSpot CMS</li>
-                        </ul>
-                        <a class="btn btn-sm" href="https://www.3yourmind.com/" target="_blank" rel="noreferrer">
-                            <span>View Website</span>
-                            <span class="sr-only">(opens in a new tab)</span>
-                            <%= require('html-loader!./partials/icon-launch.svg.html').default %>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2 class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Contact</h2>
-
-            <h3 class="text-xl sm:text-2xl mb-2">Say hello!</h3>
-            <p class="sm:text-lg">I'm currently open to new opportunities in Berlin or remote.</p>
-            <p class="sm:text-lg mb-6">Contact me on <a class="link" href="https://www.linkedin.com/in/florian-strasser/" target="_blank" rel="noreferrer">LinkedIn</a> or drop me a line with the button below.</p>
-            <button class="btn send-mail-btn mb-12">
-                <span>Send Email</span>
-                <%= require('html-loader!./partials/paper-plane.svg.html').default %>
-            </button>
-
-            <h3 class="text-xl sm:text-2xl mb-2">Find me here:</h3>
-            <ul class="sm:text-lg">
-                <li>
-                    <a class="link inline-flex items-center" href="https://www.linkedin.com/in/florian-strasser/">
-                        <%= require('html-loader!./partials/linkedin.svg.html').default %>
-                            <span class="ml-2">linkedin.com/in/florian-strasser</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="link inline-flex items-center" href="https://github.com/flostrasser">
-                        <%= require('html-loader!./partials/github.svg.html').default %>
-                            <span class="ml-2">github.com/flostrasser</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="link inline-flex items-center" href="https://codepen.io/flostrasser">
-                        <%= require('html-loader!./partials/codepen.svg.html').default %>
-                            <span class="ml-2">codepen.io/flostrasser</span>
-                    </a>
-                </li>
+    <section id="projects">
+      <h2 class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Projects</h2>
+      <div class="grid gap-8">
+        <div class="project-item featured bg-miru">
+          <div class="picture-wrapper">
+            <picture>
+              <source srcset="<%= require('./images/miru.png?format=avif') %>" type="image/avif">
+              <source srcset="<%= require('./images/miru.png?format=webp') %>" type="image/webp">
+              <source srcset="<%= require('./images/miru.png') %>" type="image/png">
+              <img class="project-img" src="<%= require('./images/miru.png').placeholder %>"
+                   alt="screenshots of the MIRU website" loading="lazy" width="338" height="135">
+            </picture>
+          </div>
+          <div class="project-details">
+            <h3>MIRU</h3>
+            <p>For one of my last website projects - a real estate marketing website, I created a custom
+              data-table and range-slider implementation.</p>
+            <ul>
+              <li>Tailwind CSS</li>
+              <li>Eleventy</li>
             </ul>
-        </section>
-    </main>
+            <a class="btn btn-sm" href="https://www.miru-potsdam.de" target="_blank" rel="noreferrer">
+              <span>View Website</span>
+              <span class="sr-only">(opens in a new tab)</span>
+              <%= require('html-loader!./partials/icon-launch.svg.html').default %>
+            </a>
+          </div>
+        </div>
 
-    <footer class="bg-black bg-opacity-40 py-8 justify-items-center font-mono text-sm">
-        <div class="mb-2">Made with ❤️ in Berlin.</div>
-        <div>&copy; 2021 Florian Strasser</div>
-    </footer>
+        <div class="project-item bg-mybay">
+          <div class="picture-wrapper">
+            <picture>
+              <source srcset="<%= require('./images/mybay.png?format=avif') %>" type="image/avif">
+              <source srcset="<%= require('./images/mybay.png?format=webp') %>" type="image/webp">
+              <source srcset="<%= require('./images/mybay.png') %>" type="image/png">
+              <img class="project-img" src="<%= require('./images/mybay.png').placeholder %>"
+                   alt="screenshots of the MY BAY website" loading="lazy" width="338" height="219">
+            </picture>
+          </div>
+          <div class="project-details lg:pl-0">
+            <h3>MY BAY</h3>
+            <p>MY BAY is a multi-language website with an interactive floor search and personalized content.
+            </p>
+            <ul>
+              <li>Bootstrap</li>
+              <li>.NET Core</li>
+            </ul>
+            <a class="btn btn-sm" href="https://www.mybay.berlin" target="_blank" rel="noreferrer">
+              <span>View Website</span>
+              <span class="sr-only">(opens in a new tab)</span>
+              <%= require('html-loader!./partials/icon-launch.svg.html').default %>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item bg-qhliving">
+          <div class="picture-wrapper">
+            <picture>
+              <source srcset="<%= require('./images/qh-living.png?format=avif') %>" type="image/avif">
+              <source srcset="<%= require('./images/qh-living.png?format=webp') %>" type="image/webp">
+              <source srcset="<%= require('./images/qh-living.png') %>" type="image/png">
+              <img class="project-img object-bottom"
+                   src="<%= require('./images/qh-living.png').placeholder %>"
+                   alt="screenshots of the QH-LIVING website" loading="lazy" width="338" height="219">
+            </picture>
+          </div>
+          <div class="project-details lg:order-first lg:pr-0">
+            <h3>QH-LIVING</h3>
+            <p>QH-LIVING is a colorful multi-language real estate marketing website with extensive use of
+              CSS grid.</p>
+            <ul>
+              <li>Bootstrap</li>
+              <li>.NET Core</li>
+            </ul>
+            <a class="btn btn-sm" href="https://www.qh-living.com" target="_blank" rel="noreferrer">
+              <span>View Website</span>
+              <span class="sr-only">(opens in a new tab)</span>
+              <%= require('html-loader!./partials/icon-launch.svg.html').default %>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item bg-teleclap">
+          <div class="picture-wrapper">
+            <picture>
+              <source srcset="<%= require('./images/teleclap.png?format=avif') %>" type="image/avif">
+              <source srcset="<%= require('./images/teleclap.png?format=webp') %>" type="image/webp">
+              <source srcset="<%= require('./images/teleclap.png') %>" type="image/png">
+              <img class="project-img object-bottom"
+                   src="<%= require('./images/teleclap.png').placeholder %>"
+                   alt="screenshots of the TeleClap web app" loading="lazy" width="338" height="219">
+            </picture>
+          </div>
+          <div class="project-details lg:pl-0">
+            <h3>TeleClap</h3>
+            <p>A side-project created together with friends. I was working on branding, web design, and
+              front-end development.</p>
+            <ul>
+              <li>Vue.js</li>
+            </ul>
+            <a class="btn btn-sm" href="https://teleclap.org" target="_blank" rel="noreferrer">
+              <span>View Website</span>
+              <span class="sr-only">(opens in a new tab)</span>
+              <%= require('html-loader!./partials/icon-launch.svg.html').default %>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item bg-flexgallery">
+          <div class="picture-wrapper">
+            <picture>
+              <source srcset="<%= require('./images/flex-gallery.png?format=avif') %>" type="image/avif">
+              <source srcset="<%= require('./images/flex-gallery.png?format=webp') %>" type="image/webp">
+              <source srcset="<%= require('./images/flex-gallery.png') %>" type="image/png">
+              <img class="project-img" src="<%= require('./images/flex-gallery.png').placeholder %>"
+                   alt="screenshots of the flexbox project" loading="lazy" width="338" height="219">
+            </picture>
+          </div>
+          <div class="project-details lg:order-first lg:pr-0">
+            <h3>flex-gallery</h3>
+            <p>Flex-Gallery is an open-source responsive lightbox gallery with flexbox and progressive image
+              loading written in JavaScript and SCSS.</p>
+            <ul>
+              <li>flexbox</li>
+              <li>progressive image loading</li>
+            </ul>
+            <a class="btn btn-sm" href="https://github.com/flostrasser/flex-gallery" target="_blank"
+               rel="noreferrer">
+              <span>View Repository</span>
+              <span class="sr-only">(opens in a new tab)</span>
+              <%= require('html-loader!./partials/icon-launch.svg.html').default %>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item bg-threeyourmind">
+          <div class="picture-wrapper">
+            <picture>
+              <source srcset="<%= require('./images/3yourmind.png?format=avif') %>" type="image/avif">
+              <source srcset="<%= require('./images/3yourmind.png?format=webp') %>" type="image/webp">
+              <source srcset="<%= require('./images/3yourmind.png') %>" type="image/png">
+              <img class="project-img object-bottom"
+                   src="<%= require('./images/3yourmind.png').placeholder %>"
+                   alt="screenshots of the 3YOURMIND website" loading="lazy" width="338" height="219">
+            </picture>
+          </div>
+          <div class="project-details lg:pl-0">
+            <h3>3YOURMIND</h3>
+            <p>At my first full-time job, I led a major redesign and the development of their marketing
+              website.</p>
+            <ul>
+              <li>Bootstrap</li>
+              <li>HubSpot CMS</li>
+            </ul>
+            <a class="btn btn-sm" href="https://www.3yourmind.com/" target="_blank" rel="noreferrer">
+              <span>View Website</span>
+              <span class="sr-only">(opens in a new tab)</span>
+              <%= require('html-loader!./partials/icon-launch.svg.html').default %>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Contact</h2>
+
+      <h3 class="text-xl sm:text-2xl mb-2">Say hello!</h3>
+      <p class="sm:text-lg">I'm currently open to new opportunities in Berlin or remote.</p>
+      <p class="sm:text-lg mb-6">Contact me on <a class="link"
+           href="https://www.linkedin.com/in/florian-strasser/" target="_blank" rel="noreferrer">LinkedIn</a> or
+        drop me a line with the button below.</p>
+      <button class="btn send-mail-btn mb-12">
+        <span>Send Email</span>
+        <%= require('html-loader!./partials/paper-plane.svg.html').default %>
+      </button>
+
+      <h3 class="text-xl sm:text-2xl mb-2">Find me here:</h3>
+      <ul class="sm:text-lg">
+        <li>
+          <a class="link inline-flex items-center" href="https://www.linkedin.com/in/florian-strasser/">
+            <%= require('html-loader!./partials/linkedin.svg.html').default %>
+              <span class="ml-2">linkedin.com/in/florian-strasser</span>
+          </a>
+        </li>
+        <li>
+          <a class="link inline-flex items-center" href="https://github.com/flostrasser">
+            <%= require('html-loader!./partials/github.svg.html').default %>
+              <span class="ml-2">github.com/flostrasser</span>
+          </a>
+        </li>
+        <li>
+          <a class="link inline-flex items-center" href="https://codepen.io/flostrasser">
+            <%= require('html-loader!./partials/codepen.svg.html').default %>
+              <span class="ml-2">codepen.io/flostrasser</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="bg-black bg-opacity-40 py-8 justify-items-center font-mono text-sm">
+    <div class="mb-2">Made with ❤️ in Berlin.</div>
+    <div>&copy; 2021 Florian Strasser</div>
+  </footer>
 </body>
 
 </html>

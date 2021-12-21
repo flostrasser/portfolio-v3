@@ -4,10 +4,10 @@
 
 ## Tech Stack
 
--   [npm](https://www.npmjs.com/)
--   [Tailwind CSS](https://tailwindcss.com/)
--   [Webpack](https://webpack.js.org/)
--   [Babel](https://babeljs.io/)
+- [npm](https://www.npmjs.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Webpack](https://webpack.js.org/)
+- [Babel](https://babeljs.io/)
 
 ## Getting Started
 
