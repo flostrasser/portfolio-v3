@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+
 @layer base {
   @font-face {
     font-family: "PTRootUIWebVF";
@@ -51,12 +53,7 @@
   }
 
   strong,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  :--headings {
     font-variation-settings: var(--whgt-bold);
   }
 
