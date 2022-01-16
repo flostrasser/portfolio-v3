@@ -29,11 +29,19 @@
     --whgt-bold: "wght" 600;
   }
 
+  html {
+    scroll-behavior: smooth;
+
+    @media (prefers-reduced-motion: reduce) {
+      scroll-behavior: auto;
+    }
+  }
+
   body {
     font-variation-settings: var(--whgt-base);
   }
 
-  nav,
+  header,
   section,
   footer {
     @apply grid justify-items-start;
@@ -47,7 +55,7 @@
   }
 
   section {
-    @apply py-14 sm:py-20;
+    @apply py-14 sm:py-20 focus-visible:outline-none;
   }
 
   strong,
@@ -72,11 +80,7 @@
 }
 
 @layer components {
-  .nav-container {
-    @apply flex flex-wrap py-4 w-full items-center justify-between md:justify-start;
-  }
-
-  nav {
+  header {
     @apply fixed w-full top-0 bg-purple-dark z-10 transition-transform duration-500;
 
     &.slide-up {
@@ -111,6 +115,10 @@
     button {
       @apply md:hidden px-2 py-[0.2rem];
     }
+  }
+
+  nav {
+    @apply flex flex-wrap py-4 w-full items-center justify-between md:justify-start;
   }
 
   .btn {
