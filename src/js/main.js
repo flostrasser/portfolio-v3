@@ -10,14 +10,14 @@ function initNavbar() {
   const navLinks = nav.querySelectorAll('a');
 
   // toggle navbar when clicking on toggler button
-  navbarToggler.addEventListener('click', e => {
+  navbarToggler.addEventListener('click', () => {
     nav.classList.toggle('expanded');
     const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
     navbarToggler.setAttribute('aria-expanded', !isExpanded);
   });
 
   // close navbar when clicking on nav link
-  navLinks.forEach(navLink => navLink.addEventListener('click', e => {
+  navLinks.forEach(navLink => navLink.addEventListener('click', () => {
     nav.classList.remove('expanded');
     navbarToggler.setAttribute('aria-expanded', false);
   }));
@@ -33,7 +33,7 @@ function initNavbar() {
   // hide navbar when scrolling down
   const scrollPosThreshold = 50;
   let prevScrollPos = document.documentElement.scrollTop;
-  window.addEventListener('scroll', e => {
+  window.addEventListener('scroll', () => {
     const currentScrollPos = document.documentElement.scrollTop;
     const isBelowThreshold = currentScrollPos > scrollPosThreshold;
     const isNavbarExpanded = nav.classList.contains('expanded');
@@ -67,7 +67,7 @@ function initSmoothScrollToTarget() {
 
     window.scrollTo({
       top: offsetPosition,
-      behavior: "smooth"
+      behavior: 'smooth'
     });
 
     nav.classList.add('no-slide-up');
@@ -92,7 +92,7 @@ function initEmailBtn() {
 
   const sendMailBtn = document.querySelector('.send-mail-btn');
 
-  sendMailBtn.addEventListener('click', e => {
+  sendMailBtn.addEventListener('click', () => {
     window.location.href = mailto;
   });
 }
