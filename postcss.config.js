@@ -1,7 +1,12 @@
+const tailwindcss = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
+const PostcssPresetEnv = require('postcss-preset-env');
+
+// prettier-ignore
 module.exports = {
   plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
-    require('postcss-preset-env')({ stage: 1 }),
+    tailwindcss,
+    autoprefixer,
+    PostcssPresetEnv({ stage: 1 }),
   ],
 }

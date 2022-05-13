@@ -1,9 +1,5 @@
 import '../scss/styles.scss';
 
-initNavbar();
-initSmoothScrollToTarget();
-initEmailBtn();
-
 function initNavbar() {
   const nav = document.querySelector('body > nav');
   const navbarToggler = nav.querySelector('button[aria-expanded]');
@@ -17,13 +13,15 @@ function initNavbar() {
   });
 
   // close navbar when clicking on nav link
-  navLinks.forEach(navLink => navLink.addEventListener('click', () => {
-    nav.classList.remove('expanded');
-    navbarToggler.setAttribute('aria-expanded', false);
-  }));
+  navLinks.forEach((navLink) =>
+    navLink.addEventListener('click', () => {
+      nav.classList.remove('expanded');
+      navbarToggler.setAttribute('aria-expanded', false);
+    })
+  );
 
   // close navbar when clicking outside the nav
-  window.addEventListener('click', e => {
+  window.addEventListener('click', (e) => {
     if (!document.querySelector('nav').contains(e.target)) {
       nav.classList.remove('expanded');
       navbarToggler.setAttribute('aria-expanded', false);
@@ -41,7 +39,6 @@ function initNavbar() {
 
     if (currentScrollPos > prevScrollPos && isBelowThreshold && !isNavbarExpanded && !isPreventSlideUp) {
       nav.classList.add('slide-up'); // hide
-
     } else if (currentScrollPos < prevScrollPos) {
       nav.classList.remove('slide-up'); // show
     }
@@ -56,39 +53,39 @@ function initSmoothScrollToTarget() {
 
   let noSlideUpCounter = 0;
 
-  internalHashLinks.forEach(link => link.addEventListener('click', e => {
-    const targetEl = document.querySelector(e.currentTarget.hash || 'body');
+  internalHashLinks.forEach((link) =>
+    link.addEventListener('click', (e) => {
+      const targetEl = document.querySelector(e.currentTarget.hash || 'body');
 
-    if (!targetEl) return;
+      if (!targetEl) return;
 
-    const offset = 35;
-    const targetElPosTop = targetEl.getBoundingClientRect().top;
-    const offsetPosition = targetElPosTop + document.documentElement.scrollTop - offset;
+      const offset = 35;
+      const targetElPosTop = targetEl.getBoundingClientRect().top;
+      const offsetPosition = targetElPosTop + document.documentElement.scrollTop - offset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
 
-    nav.classList.add('no-slide-up');
-    noSlideUpCounter++;
+      nav.classList.add('no-slide-up');
+      noSlideUpCounter += 1;
 
-    window.setTimeout(() => {
-      if (noSlideUpCounter <= 1) {
-        nav.classList.remove('no-slide-up');
-      }
+      window.setTimeout(() => {
+        if (noSlideUpCounter <= 1) {
+          nav.classList.remove('no-slide-up');
+        }
 
-      noSlideUpCounter--;
-    }, 1000);
+        noSlideUpCounter -= 1;
+      }, 1000);
 
-    e.preventDefault();
-  }));
+      e.preventDefault();
+    })
+  );
 }
 
 function initEmailBtn() {
-  const mailto = String('mailto:infoatflorianstrasserdotcom')
-    .replace('at', '@')
-    .replace('dot', '.');
+  const mailto = String('mailto:infoatflorianstrasserdotcom').replace('at', '@').replace('dot', '.');
 
   const sendMailBtn = document.querySelector('.send-mail-btn');
 
@@ -96,3 +93,7 @@ function initEmailBtn() {
     window.location.href = mailto;
   });
 }
+
+initNavbar();
+initSmoothScrollToTarget();
+initEmailBtn();
