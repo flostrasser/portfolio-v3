@@ -1,9 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  content: [
-    './src/**/*.{html,js}',
-  ],
+  content: ['./src/**/*.{html,js}'],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -29,8 +27,10 @@ module.exports = {
       threeyourmind: 'hsl(217deg 63% 29%)',
     },
     fontFamily: {
+      // prettier-ignore
       sans: ['PTRootUIWebVF', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"'],
-      mono: ['"Roboto Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
+      // prettier-ignore
+      mono: ['"Roboto Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
     },
     // fontSize: {
     //   sm: ['14px', '20px'],
@@ -43,7 +43,7 @@ module.exports = {
         // golden: '1 0 38.2%',
         golden: '1 0 61.8%',
       },
-    }
+    },
   },
   plugins: [],
-}
+};

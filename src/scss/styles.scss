@@ -2,20 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+
 @layer base {
   @font-face {
-    font-family: "PTRootUIWebVF";
-    src: local(""), url("../fonts/PT-Root-UI/PT-Root-UI_VF.woff2") format("woff2"),
-      url("../fonts/PT-Root-UI/PT-Root-UI_VF.woff") format("woff");
+    font-family: 'PTRootUIWebVF';
+    src: local(''), url('../fonts/PT-Root-UI/PT-Root-UI_VF.woff2') format('woff2'),
+      url('../fonts/PT-Root-UI/PT-Root-UI_VF.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Roboto Mono";
-    src: local(""), url("../fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff2") format("woff2"),
-      url("../fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff") format("woff");
+    font-family: 'Roboto Mono';
+    src: local(''), url('../fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff2') format('woff2'),
+      url('../fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -25,8 +27,8 @@
     --container-padding: 5vw;
     --container-max-width: 60rem;
 
-    --whgt-base: "wght" 400;
-    --whgt-bold: "wght" 600;
+    --whgt-base: 'wght' 400;
+    --whgt-bold: 'wght' 600;
   }
 
   html {
@@ -59,12 +61,7 @@
   }
 
   strong,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  :--headings {
     font-variation-settings: var(--whgt-bold);
   }
 
@@ -75,7 +72,7 @@
   // fix accessibility issue for lists that have 'list-style-type: none' or 'display: inline' applied
   // https://gerardkcohen.me/writing/2017/voiceover-list-style-type.html
   li::before {
-    content: "\200B"; // add zero-width space
+    content: '\200B'; // add zero-width space
   }
 }
 
@@ -235,7 +232,7 @@
   }
 
   .content-empty {
-    content: "";
+    content: '';
   }
 
   .whgt-bold {
