@@ -124,7 +124,7 @@
   }
 
   .experience-item {
-    @apply sm:grid gap-x-4;
+    @apply sm:grid gap-x-4 justify-start;
 
     & > * {
       @apply col-start-2;
