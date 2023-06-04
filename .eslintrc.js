@@ -1,20 +1,17 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     es2021: true,
   },
-  extends: [
-    'airbnb-base',
-    'prettier',
-    'plugin:prettier/recommended', // should be last extension in array
-  ],
+  extends: ['eslint:recommended'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['prettier'],
   rules: {
-    'prettier/prettier': 'error',
+    'no-console': 'warn',
     'no-param-reassign': ['error', { props: false }], // not needed, only for reference
   },
+  ignorePatterns: ['.eslintrc.js'], // ignore this file
 };
