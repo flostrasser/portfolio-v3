@@ -2,7 +2,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -30,30 +29,6 @@ module.exports = (env, argv) => {
         template: './src/index.html',
         hash: true,
         scriptLoading: 'module',
-      }),
-      // generate favicons and link them in index.html
-      new FaviconsWebpackPlugin({
-        logo: './src/favicon.svg',
-        prefix: '/favicons/',
-        mode: 'auto', // 'webapp', 'light' or 'auto'
-        favicons: {
-          appName: 'Florian Strasser Portfolio',
-          appDescription: 'Personal Frontend Developer & Web Designer Portfolio of Florian Strasser',
-          developerName: 'Florian Strasser',
-          developerURL: null, // prevent retrieving from the nearest package.json
-          background: '#ddd',
-          theme_color: '#101326',
-          icons: {
-            android: true, // Create Android homescreen icon. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
-            appleIcon: true, // Create Apple touch icons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
-            appleStartup: false, // Create Apple startup images. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
-            coast: false, // Create Opera Coast icon. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
-            favicons: true, // Create regular favicons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
-            firefox: false, // Create Firefox OS icons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
-            windows: false, // Create Windows 8 tile icons. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
-            yandex: false, // Create Yandex browser icon. `boolean` or `{ offset, background, mask, overlayGlow, overlayShadow }` or an array of sources
-          },
-        },
       }),
       // optimize generated favicons from FaviconsWebpackPlugin and generated images from responsive-loader
       new ImageminWebpackPlugin({
