@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
 
   return {
     mode,
-    entry: './src/js/main.js',
+    entry: './src/js/main.ts',
     output: {
       filename: 'main.js',
       path: `${__dirname}/dist`,
@@ -45,9 +45,9 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.m?js$/,
+          test: /\.ts?$/,
           include: `${__dirname}/src`,
-          use: ['babel-loader'],
+          use: 'babel-loader',
         },
         {
           test: /\.scss$/i,
@@ -78,6 +78,9 @@ module.exports = (env, argv) => {
           ],
         },
       ],
+    },
+    resolve: {
+      extensions: ['.ts', '.js'],
     },
     optimization: {
       minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
