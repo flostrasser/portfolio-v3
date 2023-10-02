@@ -19,7 +19,7 @@ function initNavbar() {
     navLink.addEventListener('click', () => {
       nav.classList.remove('expanded');
       navbarToggler.setAttribute('aria-expanded', `${false}`);
-    })
+    }),
   );
 
   // close navbar when clicking outside the nav
@@ -83,7 +83,7 @@ function initSmoothScrollToTarget() {
       }, 1000);
 
       e.preventDefault();
-    })
+    }),
   );
 }
 

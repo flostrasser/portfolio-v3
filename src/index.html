@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
@@ -16,10 +16,10 @@
     <title>Florian Strasser - Frontend Development & Web Design Portfolio</title>
   </head>
 
-  <body class="overflow-x-hidden bg-purple-dark text-white text-opacity-80 leading-relaxed pt-20">
+  <body class="overflow-x-hidden bg-purple-dark pt-20 leading-relaxed text-white text-opacity-80">
     <nav>
       <div class="nav-container">
-        <a class="flex -ml-4" href="/#" title="Home" aria-label="Home">
+        <a class="-ml-4 flex" href="/#" title="Home" aria-label="Home">
           <%= require('html-loader!./partials/logo.svg.html').default %>
         </a>
 
@@ -39,19 +39,19 @@
 
     <main>
       <section id="about" aria-label="About">
-        <h1 class="grid text-4xl sm:text-6xl md:text-8xl mb-8 sm:mb-16">
+        <h1 class="mb-8 grid text-4xl sm:mb-16 sm:text-6xl md:text-8xl">
           <span class="text-xl sm:text-2xl">Hello, I'm</span>
           <span class="text-bg-gradient">Florian Strasser.</span>
           <span>I make websites.</span>
         </h1>
 
-        <p class="sm:text-xl max-w-2xl mb-6 leading-relaxed">
+        <p class="mb-6 max-w-2xl leading-relaxed sm:text-xl">
           I’m a multi-disciplinary
           <strong class="text-white">frontend developer</strong> & <strong class="text-white">web designer</strong> with
           a keen eye for details. I focus on fast and accessible web experiences.
         </p>
 
-        <p class="sm:text-xl max-w-2xl mb-4 leading-relaxed">
+        <p class="mb-4 max-w-2xl leading-relaxed sm:text-xl">
           I have worked as a web &
           <strong class="text-white">graphic designer</strong> at 3YOURMIND, then shifted my focus to
           <strong class="text-white">web development</strong>. At Allod MediaC2, I was leading the design and
@@ -61,7 +61,7 @@
         <div class="space-y-4">
           <a
             href="/#projects"
-            class="btn mr-4 bg-gradient-to-tr from-purple to-tangerine hover:from-purple hover:to-blue hover:text-white border-transparent text-purple-dark"
+            class="btn mr-4 border-transparent bg-gradient-to-tr from-purple to-tangerine text-purple-dark hover:from-purple hover:to-blue hover:text-white"
             >View Projects</a
           >
           <a href="/CV_Florian_Strasser.pdf" class="btn" target="_blank">
@@ -72,8 +72,8 @@
       </section>
 
       <section id="skills" aria-labelledby="skills-title">
-        <h2 id="skills-title" class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Skills & Tools</h2>
-        <div class="grid w-full grid-cols-[repeat(auto-fill,9rem)] gap-x-24 gap-y-8 font-mono sm:text-lg leading-loose">
+        <h2 id="skills-title" class="text-bg-gradient mb-8 text-4xl sm:mb-12 sm:text-6xl">Skills & Tools</h2>
+        <div class="grid w-full grid-cols-[repeat(auto-fill,9rem)] gap-x-24 gap-y-8 font-mono leading-loose sm:text-lg">
           <ul>
             <li>TypeScript</li>
             <li>HTML/CSS</li>
@@ -100,7 +100,7 @@
       </section>
 
       <section id="experience" aria-labelledby="experience-title">
-        <h2 id="experience-title" class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Experience</h2>
+        <h2 id="experience-title" class="text-bg-gradient mb-8 text-4xl sm:mb-12 sm:text-6xl">Experience</h2>
         <div>
           <div class="experience-item">
             <h3>Frontend Developer @&nbsp;BITGRIP</h3>
@@ -157,7 +157,7 @@
       </section>
 
       <section id="projects" aria-labelledby="projects-title">
-        <h2 id="projects-title" class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Projects</h2>
+        <h2 id="projects-title" class="text-bg-gradient mb-8 text-4xl sm:mb-12 sm:text-6xl">Projects</h2>
         <div class="grid gap-8">
           <div class="project-item featured bg-miru">
             <div class="picture-wrapper">
@@ -358,11 +358,11 @@
       </section>
 
       <section id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title" class="text-4xl sm:text-6xl mb-8 sm:mb-12 text-bg-gradient">Contact</h2>
+        <h2 id="contact-title" class="text-bg-gradient mb-8 text-4xl sm:mb-12 sm:text-6xl">Contact</h2>
 
-        <h3 class="text-xl sm:text-2xl mb-2">Say hello!</h3>
-        <p class="sm:text-lg line-through">I'm currently open to new opportunities in Berlin or remote.</p>
-        <p class="sm:text-lg mb-6">
+        <h3 class="mb-2 text-xl sm:text-2xl">Say hello!</h3>
+        <p class="line-through sm:text-lg">I'm currently open to new opportunities in Berlin or remote.</p>
+        <p class="mb-6 sm:text-lg">
           Contact me on
           <a class="link" href="https://www.linkedin.com/in/florian-strasser/" target="_blank" rel="noreferrer"
             >LinkedIn</a
@@ -374,7 +374,7 @@
           <%= require('html-loader!./partials/paper-plane.svg.html').default %>
         </button>
 
-        <h3 class="text-xl sm:text-2xl mb-2">Find me here:</h3>
+        <h3 class="mb-2 text-xl sm:text-2xl">Find me here:</h3>
         <ul class="sm:text-lg">
           <li>
             <a class="link inline-flex items-center" href="https://www.linkedin.com/in/florian-strasser/">
@@ -398,7 +398,7 @@
       </section>
     </main>
 
-    <footer class="bg-black bg-opacity-40 py-8 justify-items-center font-mono text-sm">
+    <footer class="justify-items-center bg-black bg-opacity-40 py-8 font-mono text-sm">
       <div class="mb-2">Made with ❤️ in Berlin.</div>
       <div>&copy; 2023 Florian Strasser</div>
     </footer>
