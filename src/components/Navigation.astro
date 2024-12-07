@@ -1,0 +1,176 @@
+---
+import Logo from '../assets/icons/logo.svg';
+import Hamburger from '../assets/icons/hamburger.svg';
+---
+
+<script>
+  function initNavbar() {
+    const nav = document.querySelector('body > nav');
+    if (!nav) return;
+    const navbarToggler = nav.querySelector('button[aria-expanded]');
+    const navLinks = nav.querySelectorAll('a');
+    if (!navbarToggler || !navLinks) return;
+
+    // toggle navbar when clicking on toggler button
+    navbarToggler.addEventListener('click', () => {
+      nav.classList.toggle('expanded');
+      const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+      navbarToggler.setAttribute('aria-expanded', `${!isExpanded}`);
+    });
+
+    // close navbar when clicking on nav link
+    navLinks.forEach((navLink) =>
+      navLink.addEventListener('click', () => {
+        nav.classList.remove('expanded');
+        navbarToggler.setAttribute('aria-expanded', `${false}`);
+      })
+    );
+
+    // close navbar when clicking outside the nav
+    window.addEventListener('click', (e) => {
+      if (!document.querySelector('nav')?.contains(e.target as Element)) {
+        nav.classList.remove('expanded');
+        navbarToggler.setAttribute('aria-expanded', `${false}`);
+      }
+    });
+
+    // hide navbar when scrolling down
+    const scrollPosThreshold = 50;
+    let prevScrollPos = document.documentElement.scrollTop;
+    window.addEventListener('scroll', () => {
+      const currentScrollPos = document.documentElement.scrollTop;
+      const isBelowThreshold = currentScrollPos > scrollPosThreshold;
+      const isNavbarExpanded = nav.classList.contains('expanded');
+      const isPreventSlideUp = nav.classList.contains('no-slide-up');
+
+      if (
+        currentScrollPos > prevScrollPos &&
+        isBelowThreshold &&
+        !isNavbarExpanded &&
+        !isPreventSlideUp
+      ) {
+        nav.classList.add('slide-up'); // hide
+      } else if (currentScrollPos < prevScrollPos) {
+        nav.classList.remove('slide-up'); // show
+      }
+
+      prevScrollPos = currentScrollPos;
+    });
+  }
+
+  function initSmoothScrollToTarget() {
+    const nav = document.querySelector('body > nav');
+    if (!nav) return;
+    const internalHashLinks =
+      document.querySelectorAll<HTMLAnchorElement>('a[href^="/#"]');
+
+    let noSlideUpCounter = 0;
+
+    internalHashLinks.forEach((link) =>
+      link.addEventListener('click', (e) => {
+        const targetEl = document.querySelector(
+          (e.currentTarget as HTMLAnchorElement)?.hash || 'body'
+        );
+
+        if (!targetEl) return;
+
+        const offset = 35;
+        const targetElPosTop = targetEl.getBoundingClientRect().top;
+        const offsetPosition =
+          targetElPosTop + document.documentElement.scrollTop - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+
+        nav.classList.add('no-slide-up');
+        noSlideUpCounter += 1;
+
+        window.setTimeout(() => {
+          if (noSlideUpCounter <= 1) {
+            nav.classList.remove('no-slide-up');
+          }
+
+          noSlideUpCounter -= 1;
+        }, 1000);
+
+        e.preventDefault();
+      })
+    );
+  }
+
+  initNavbar();
+  initSmoothScrollToTarget();
+</script>
+
+<nav>
+  <div class="nav-container">
+    <a class="-ml-4 flex" href="/#" title="Home" aria-label="Home">
+      <Logo />
+    </a>
+
+    <button
+      type="button"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="toggle navigation"
+    >
+      <Hamburger />
+    </button>
+
+    <ul id="navbarNav">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#skills">Skills&nbsp;&&nbsp;Tools</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style lang="scss">
+  @tailwind components;
+  @layer components {
+    .nav-container {
+      @apply flex w-full flex-wrap items-center justify-between py-4 md:justify-start;
+    }
+
+    nav {
+      @apply fixed top-0 z-10 w-full bg-purple-dark transition-transform duration-500;
+
+      &.slide-up {
+        @apply -translate-y-full;
+      }
+
+      ul {
+        @apply hidden basis-full flex-col gap-1 md:flex md:basis-auto md:flex-row;
+        @apply -ml-5 space-y-6 py-6 pl-1 md:ml-0 md:space-y-0 md:pl-0;
+        @apply text-xl md:text-base;
+      }
+
+      &.expanded {
+        @apply border-b-2 border-blue border-opacity-20 md:border-b-0;
+
+        ul {
+          @apply flex;
+        }
+      }
+
+      a,
+      button {
+        @apply rounded-md px-4 py-2 transition-all;
+        @apply hover:bg-purple hover:bg-opacity-10 hover:text-white;
+        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple;
+
+        &:hover {
+          font-variation-settings: var(--whgt-bold);
+        }
+      }
+
+      button {
+        @apply px-2 py-[0.2rem] md:hidden;
+      }
+    }
+  }
+</style>

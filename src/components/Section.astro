@@ -1,0 +1,33 @@
+---
+export interface Props {
+  id: string;
+  title: string;
+  renderTitle?: boolean;
+}
+
+const { id, title, renderTitle = true } = Astro.props;
+const titleId = `${id}-title`;
+---
+
+<section {id} aria-labelledby={titleId}>
+  {
+    renderTitle && (
+      <h2
+        id={titleId}
+        class="text-bg-gradient mb-8 text-4xl sm:mb-12 sm:text-6xl"
+      >
+        {title}
+      </h2>
+    )
+  }
+  <slot />
+</section>
+
+<style lang="scss">
+  @tailwind components;
+  @layer components {
+    section {
+      @apply py-14 sm:py-20;
+    }
+  }
+</style>

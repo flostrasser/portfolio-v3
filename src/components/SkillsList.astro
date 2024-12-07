@@ -1,0 +1,21 @@
+---
+export interface Props {
+  skills: string[][];
+}
+
+const { skills } = Astro.props;
+---
+
+<div
+  class="grid w-full grid-cols-[repeat(auto-fill,9rem)] gap-x-24 gap-y-8 font-mono leading-loose sm:text-lg"
+>
+  {
+    skills.map((column) => (
+      <ul>
+        {column.map((skill) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+    ))
+  }
+</div>

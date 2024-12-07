@@ -1,0 +1,443 @@
+---
+import ExperienceItem from '../components/ExperienceItem.astro';
+import ProjectItem from '../components/ProjectItem.astro';
+import Section from '../components/Section.astro';
+import SendEmailBtn from '../components/SendEmailBtn.astro';
+import SkillsList from '../components/SkillsList.astro';
+import Layout from '../layouts/Layout.astro';
+
+import IconDownload from '../assets/icons/download.svg';
+import IconLinkedIn from '../assets/icons/linkedin.svg';
+import IconGitHub from '../assets/icons/github.svg';
+import IconCodepen from '../assets/icons/codepen.svg';
+
+import miruImage from '../assets/images/miru.png';
+import mybayImage from '../assets/images/mybay.png';
+import qhLivingImage from '../assets/images/qh-living.png';
+import teleclapImage from '../assets/images/teleclap.png';
+import flexGalleryImage from '../assets/images/flex-gallery.png';
+import threeyourmindImage from '../assets/images/3yourmind.png';
+
+const title = 'Florian Strasser - Frontend Development & Web Design Portfolio';
+---
+
+<Layout {title}>
+  <Section id="about" title="About" renderTitle={false}>
+    <h1 class="mb-8 grid text-4xl sm:mb-16 sm:text-6xl md:text-8xl">
+      <span class="text-xl sm:text-2xl">Hello, I'm</span>
+      <span class="text-bg-gradient">Florian Strasser.</span>
+      <span>I make websites.</span>
+    </h1>
+
+    <p class="mb-6 max-w-2xl leading-relaxed sm:text-xl">
+      I’m a multi-disciplinary
+      <strong class="text-white">frontend developer</strong> & <strong
+        class="text-white">web designer</strong
+      > with a keen eye for details. I focus on fast and accessible web experiences.
+    </p>
+
+    <p class="mb-4 max-w-2xl leading-relaxed sm:text-xl">
+      I have worked as a web &
+      <strong class="text-white">graphic designer</strong> at 3YOURMIND, then shifted
+      my focus to
+      <strong class="text-white">web development</strong>. At Allod MediaC2, I
+      was leading the design and development of websites for customers like
+      Reggeborgh, Taurecon, and Groth Gruppe.
+    </p>
+
+    <div class="space-y-4">
+      <a
+        href="/#projects"
+        class="btn mr-4 border-transparent bg-gradient-to-tr from-purple to-tangerine text-purple-dark hover:from-purple hover:to-blue hover:text-white"
+        >View Projects</a
+      >
+      <a href="/CV_Florian_Strasser.pdf" class="btn" target="_blank">
+        <span>Download CV</span>
+        <IconDownload />
+      </a>
+    </div>
+  </Section>
+
+  <Section id="skills" title="Skills & Tools">
+    <SkillsList
+      skills={[
+        ['TypeScript', 'HTML/CSS', 'SCSS', 'C#/.NET Core'],
+        ['React', 'Tailwind CSS', 'Eleventy', 'Bootstrap'],
+        ['Git', 'npm', 'Webpack'],
+        ['VS Code', 'Figma', 'Adobe CC'],
+      ]}
+    />
+  </Section>
+
+  <Section id="experience" title="Experience">
+    <div>
+      <ExperienceItem
+        title="Frontend Developer @ BITGRIP"
+        date="2022 - Present"
+        location="Berlin, Germany"
+        list={[
+          'Working on web-apps including online shops for clients in the industrial sector.',
+          'Using frameworks, languages and tools such as Next.js, React, TypeScript and SCSS.',
+        ]}
+      />
+      <ExperienceItem
+        title="Frontend Developer & Web Designer @ Allod MediaC2"
+        date="2019 - 2021"
+        location="Berlin, Germany"
+        list={[
+          'Led several web projects from design to implementation, including wireframing & prototyping, UX design, frontend and .NET development.',
+          'Worked with a variety of languages, frameworks, and tools such as JavaScript, SCSS, C#/.NET, Eleventy, Bootstrap, Tailwind CSS, and Webpack.',
+          'Communicated with various stakeholders from backend development, graphic design, and clients on a daily basis.',
+        ]}
+      />
+      <ExperienceItem
+        title="Graphic & Web Designer @ 3YOURMIND"
+        date="2016 - 2018"
+        location="Berlin, Germany"
+        list={[
+          'Organized design sprints and allocated design tasks in the team. Responsible for branding and online/offline marketing materials.',
+          'Created icons, graphics, mockups, wireframes, and landing pages with Adobe CC, HTML, CSS, and JavaScript.',
+          'Developed a custom HubSpot CMS theme and created templates in Django for the development team.',
+        ]}
+      />
+      <ExperienceItem
+        title="Design Intern @ 3YOURMIND"
+        date="2016"
+        location="Berlin, Germany"
+        list={[
+          'Created various online/offline marketing materials, icons, graphics, mockups, wireframes, and landing pages with Adobe CC, HTML, CSS, and JavaScript.',
+        ]}
+      />
+    </div>
+  </Section>
+  <Section id="projects" title="Projects">
+    <div class="grid gap-8">
+      <ProjectItem
+        isFeatured
+        className="bg-miru"
+        title="MIRU"
+        description="MIRU is a website for a real estate project in Potsdam for which I developed a custom data-table and range-slider implementation."
+        technologies={['Tailwind CSS', 'Eleventy']}
+        link="https://www.miru-potsdam.de"
+        linkText="View Website"
+        image={miruImage}
+        imageAlt="Screenshots of the MIRU website"
+      />
+
+      <ProjectItem
+        className="bg-mybay"
+        title="MY BAY"
+        description="MY BAY is a multi-language website with an interactive floor search and personalized content."
+        technologies={['Bootstrap', '.NET Core']}
+        link="https://www.mybay-berlin.de"
+        linkText="View Website"
+        image={mybayImage}
+        imageAlt="Screenshots of the MY BAY website"
+      />
+
+      <ProjectItem
+        detailsFirst
+        imageAlign="bottom"
+        className="bg-qhliving"
+        title="QH-LIVING"
+        description="QH-LIVING is a colorful multi-language real estate marketing website with extensive use of CSS grid."
+        technologies={['Bootstrap', '.NET Core']}
+        link="https://www.qh-living.de"
+        linkText="View Website"
+        image={qhLivingImage}
+        imageAlt="Screenshots of the QH-LIVING website"
+      />
+
+      <ProjectItem
+        imageAlign="bottom"
+        className="bg-teleclap"
+        title="TeleClap"
+        description="A side-project created together with friends. I was working on branding, web design, and front-end development."
+        technologies={['Vue.js']}
+        link="https://www.teleclap.com"
+        linkText="View Website"
+        image={teleclapImage}
+        imageAlt="Screenshots of the TeleClap web app"
+      />
+
+      <ProjectItem
+        detailsFirst
+        className="bg-flexgallery"
+        title="flex-gallery"
+        description="Flex-Gallery is an open-source responsive lightbox gallery with flexbox and progressive image loading written in JavaScript and SCSS."
+        technologies={['flexbox', 'progressive image loading']}
+        link="https://github.com/flostrasser/flex-gallery"
+        linkText="View Repository"
+        image={flexGalleryImage}
+        imageAlt="Screenshots of the flex-gallery project"
+      />
+
+      <ProjectItem
+        imageAlign="bottom"
+        className="bg-threeyourmind"
+        title="3YOURMIND"
+        description="At my first full-time job, I led a major redesign and the development of their marketing website."
+        technologies={['Bootstrap', 'HubSpot CMS']}
+        link="https://www.3yourmind.com"
+        linkText="View Website"
+        image={threeyourmindImage}
+        imageAlt="Screenshots of the 3YOURMIND website"
+      />
+    </div>
+  </Section>
+
+  <Section id="contact" title="Contact">
+    <h3 class="mb-2 text-xl sm:text-2xl">Say hello!</h3>
+    <p class="line-through sm:text-lg">
+      I'm currently open to new opportunities in Berlin or remote.
+    </p>
+    <p class="mb-6 sm:text-lg">
+      Contact me on
+      <a
+        class="link"
+        href="https://www.linkedin.com/in/florian-strasser/"
+        target="_blank"
+        rel="noreferrer">LinkedIn</a
+      >
+      or drop me a line with the button below.
+    </p>
+    <SendEmailBtn />
+
+    <h3 class="mb-2 text-xl sm:text-2xl">Find me here:</h3>
+    <ul class="sm:text-lg">
+      {
+        [
+          {
+            link: 'https://www.linkedin.com/in/florian-strasser/',
+            icon: 'linkedin',
+            text: 'linkedin.com/in/florian-strasser',
+          },
+          {
+            link: 'https://github.com/flostrasser',
+            icon: 'github',
+            text: 'github.com/flostrasser',
+          },
+          {
+            link: 'https://codepen.io/flostrasser',
+            icon: 'codepen',
+            text: 'codepen.io/flostrasser',
+          },
+        ].map(({ link, icon, text }) => (
+          <>
+            {/* Avoid whitespace before anchor tag */}
+            {/* prettier-ignore */}
+            <li><a class="link inline-flex items-center" href={link}>
+              {icon === 'linkedin' && <IconLinkedIn />}
+              {icon === 'github' && <IconGitHub />}
+              {icon === 'codepen' && <IconCodepen />}
+              <span class="ml-2">{text}</span>
+            </a>
+          </li>
+          </>
+        ))
+      }
+    </ul>
+  </Section>
+</Layout>
+
+<style lang="scss" is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    @font-face {
+      font-family: 'PTRootUIWebVF';
+      src:
+        local(''),
+        url('/fonts/PT-Root-UI/PT-Root-UI_VF.woff2') format('woff2'),
+        url('/fonts/PT-Root-UI/PT-Root-UI_VF.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Roboto Mono';
+      src:
+        local(''),
+        url('/fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff2')
+          format('woff2'),
+        url('/fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff')
+          format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --container-padding: 5vw;
+      --container-max-width: 60rem;
+
+      --whgt-base: 'wght' 400;
+      --whgt-bold: 'wght' 600;
+    }
+
+    body {
+      font-variation-settings: var(--whgt-base);
+    }
+
+    nav,
+    section,
+    footer {
+      @apply grid justify-items-start;
+
+      grid-template-columns:
+        1fr [container-start] minmax(0, var(--container-max-width))
+        [container-end] 1fr;
+      column-gap: var(--container-padding);
+
+      & > * {
+        grid-column: container;
+      }
+    }
+
+    strong,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-variation-settings: var(--whgt-bold);
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    // fix accessibility issue for lists that have 'list-style-type: none' or 'display: inline' applied
+    // https://gerardkcohen.me/writing/2017/voiceover-list-style-type.html
+    li::before {
+      content: '\200B'; // add zero-width space
+    }
+  }
+
+  @layer components {
+    .btn {
+      @apply inline-flex items-center space-x-2 rounded-md border border-white px-6 py-3 font-mono transition-colors hover:bg-white hover:text-purple-dark;
+      @apply outline-none ring-purple focus-visible:ring-4;
+
+      // fix for bg-gradient
+      @apply bg-center bg-no-repeat;
+      background-size: calc(100% + 2px) calc(100% + 2px);
+    }
+
+    .btn-sm {
+      @apply px-4 py-2;
+    }
+
+    .experience-item {
+      @apply justify-start gap-x-4 sm:grid;
+
+      & > * {
+        @apply col-start-2;
+      }
+
+      &::before {
+        @apply sm:content-empty col-start-1 row-span-3 row-start-1 h-full w-[2px] justify-self-center bg-white;
+      }
+
+      &::after {
+        @apply sm:content-empty col-start-1 row-start-1 h-6 w-6 justify-self-center rounded-full border-2 border-white bg-purple-dark;
+      }
+
+      h3 {
+        @apply text-xl text-white;
+      }
+
+      h4 {
+        @apply font-mono;
+      }
+
+      ul {
+        @apply mb-6 mt-3 max-w-2xl space-y-3;
+      }
+    }
+
+    .project-item {
+      @apply flex max-w-xl flex-col rounded-md bg-opacity-10 lg:max-w-full;
+
+      &:not(.featured) {
+        @apply lg:flex-row;
+
+        .picture-wrapper {
+          @apply lg:flex-golden;
+        }
+
+        img {
+          @apply aspect-[3/2] lg:absolute lg:aspect-auto lg:bg-opacity-0;
+        }
+      }
+
+      .picture-wrapper {
+        @apply relative;
+      }
+
+      img {
+        @apply h-full w-full bg-black bg-opacity-20 object-cover;
+      }
+
+      h3 {
+        @apply text-3xl sm:text-4xl;
+      }
+
+      p {
+        @apply max-w-xl sm:text-lg;
+      }
+
+      &:not(.featured) p {
+        @apply lg:max-w-none;
+      }
+
+      ul {
+        @apply font-mono leading-loose sm:text-lg;
+      }
+    }
+
+    .project-details {
+      @apply space-y-4 p-6 sm:space-y-6 sm:p-8 lg:p-12;
+    }
+  }
+
+  @layer utilities {
+    .text-bg-gradient {
+      @apply bg-gradient-to-tr from-purple to-blue bg-clip-text text-transparent;
+    }
+
+    // slightly increase line-height for large text sizes to
+    // fix text clipping issue when using '.text-bg-gradient'.
+    .text-5xl,
+    .text-6xl,
+    .text-7xl,
+    .text-8xl,
+    .text-9xl {
+      @apply leading-[1.1];
+    }
+
+    .list li {
+      @apply relative ml-5;
+
+      &::before {
+        @apply absolute -left-5 top-2 h-2 w-2 rounded-full bg-gradient-to-tr from-purple to-blue;
+      }
+    }
+
+    .link {
+      @apply hover:whgt-bold underline hover:text-blue;
+    }
+
+    .content-empty {
+      content: '';
+    }
+
+    .whgt-bold {
+      font-variation-settings: var(--whgt-bold);
+    }
+  }
+</style>

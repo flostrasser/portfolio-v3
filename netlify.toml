@@ -1,0 +1,4 @@
+# Configure Netlify builds.
+[build]
+  publish = "dist/"
+  command = "pnpm run build"

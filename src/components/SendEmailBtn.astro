@@ -1,0 +1,23 @@
+---
+import IconPaperPlane from '../assets/icons/paper-plane.svg';
+---
+
+<script>
+  const mailto = String('mailto:infoatflorianstrasserdotcom')
+    .replace('at', '@')
+    .replace('dot', '.');
+
+  const buttons =
+    document.querySelectorAll<HTMLButtonElement>('.send-mail-btn');
+
+  buttons.forEach((button) =>
+    button.addEventListener('click', () => {
+      window.location.href = mailto;
+    })
+  );
+</script>
+
+<button class="btn send-mail-btn mb-12">
+  <span>Send Email</span>
+  <IconPaperPlane /></button
+>

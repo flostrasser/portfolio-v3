@@ -1,51 +1,23 @@
-# Personal Portfolio Website @ florianstrasser.com
+# Personal Portfolio with Astro @ florianstrasser.com
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9323e905-d682-4b5b-9172-31a313255ef9/deploy-status)](https://app.netlify.com/sites/florianstrasser/deploys)
 
-## Tech Stack
+## 🚀 Tech stack
 
-- [npm](https://www.npmjs.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Webpack](https://webpack.js.org/)
-- [Babel](https://babeljs.io/)
+- Astro
+- Netlify
+- Tailwind CSS
 
-## Getting Started
+## 🧞 Commands
 
-build dev bundle
-
-```
-npm run build:dev
-```
-
-build production bundle
-
-```
-npm run build
-```
-
-run dev server
-
-```
-npm run serve
-```
-
-serve production bundle
-
-```
-npm run build && npx serve dist
-```
-
-## Project Structure
-
-```
-root folder
-├── dist/           <-- output folder
-├── src/
-│   ├── fonts/      <-- font files
-│   ├── images/     <-- images to be optimized and exported
-│   ├── js/         <-- javascript files
-│   ├── scss/       <-- styles
-│   ├── static/     <-- static files (copied directly to dist folder)
-│   └── index.html  <-- index page
-...
-```
+| Command           | Action                                              |
+| :---------------- | :-------------------------------------------------- |
+| `pnpm install`    | Installs dependencies                               |
+| `pnpm dev`        | Starts local dev server at `http://localhost:4322/` |
+| `pnpm build`      | Build your production site to `./dist/`             |
+| `pnpm preview`    | Preview your build locally, before deploying        |
+| `pnpm check`      | Check for astro issues                              |
+| `pnpm astro ...`  | Run CLI commands like `astro add`, `astro check`    |
+| `pnpm lint`       | Run prettier and eslint                             |
+| `pnpm lint:fix`   | Fix linting issues                                  |
+| `pnpm type:check` | Check for typescript issues                         |

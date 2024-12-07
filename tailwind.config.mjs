@@ -1,7 +1,8 @@
-const colors = require('tailwindcss/colors');
+import colors from 'tailwindcss/colors.js';
 
-module.exports = {
-  content: ['./src/**/*.{html,ts}'],
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{astro,html,md,mdx,ts,svg}'],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -32,15 +33,8 @@ module.exports = {
       // prettier-ignore
       mono: ['"Roboto Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
     },
-    // fontSize: {
-    //   sm: ['14px', '20px'],
-    //   base: ['16px', '24px'],
-    //   lg: ['20px', '28px'],
-    //   xl: ['24px', '32px'],
-    // }
     extend: {
       flex: {
-        // golden: '1 0 38.2%',
         golden: '1 0 61.8%',
       },
     },
