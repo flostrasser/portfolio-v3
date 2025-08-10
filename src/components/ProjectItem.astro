@@ -34,11 +34,24 @@ const {
 } = Astro.props;
 ---
 
-<div class={classNames('project-item', className, { featured: isFeatured })}>
-  <div class="picture-wrapper">
+<div
+  class={classNames(
+    'flex max-w-xl flex-col rounded-md lg:max-w-full',
+    className,
+    {
+      'lg:flex-row': !isFeatured,
+    }
+  )}
+>
+  <div
+    class={classNames('relative', {
+      'lg:flex-golden': !isFeatured,
+    })}
+  >
     {
       isFeatured ? (
         <Picture
+          class="h-full w-full bg-black bg-opacity-20 object-cover"
           src={image}
           widths={[675, 1152, 1920]}
           sizes="(max-width: 639px) 90vw, (max-width: 1023px) 576px, 960px"
@@ -48,9 +61,12 @@ const {
         />
       ) : (
         <Picture
-          class={classNames('project-img', {
-            'object-bottom': imageAlign === 'bottom',
-          })}
+          class={classNames(
+            'aspect-[3/2] h-full w-full bg-black bg-opacity-20 object-cover lg:absolute lg:aspect-auto lg:bg-opacity-0',
+            {
+              'object-bottom': imageAlign === 'bottom',
+            }
+          )}
           src={image}
           widths={[675, 1152, 1187]}
           sizes="(max-width: 639px) 90vw, (max-width: 1023px) 576px, 593px"
@@ -62,14 +78,20 @@ const {
     }
   </div>
   <div
-    class={classNames('project-details', {
+    class={classNames('space-y-4 p-6 sm:space-y-6 sm:p-8 lg:p-12', {
       'lg:pl-0': !isFeatured && !detailsFirst,
       'lg:order-first lg:pr-0': detailsFirst,
     })}
   >
-    <h3>{title}</h3>
-    <p>{description}</p>
-    <ul>
+    <h3 class="text-3xl sm:text-4xl">{title}</h3>
+    <p
+      class={classNames('sm:text-lg max-w-xl', {
+        'lg:max-w-none': !isFeatured,
+      })}
+    >
+      {description}
+    </p>
+    <ul class="font-mono leading-loose sm:text-lg">
       {technologies.map((technology) => <li>{technology}</li>)}
     </ul>
     <a class="btn btn-sm" href={link} target="_blank" rel="noreferrer">

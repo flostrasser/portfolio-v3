@@ -118,50 +118,6 @@
       @apply mb-6 mt-3 max-w-2xl space-y-3;
     }
   }
-
-  .project-item {
-    @apply flex max-w-xl flex-col rounded-md bg-opacity-10 lg:max-w-full;
-
-    &:not(.featured) {
-      @apply lg:flex-row;
-
-      .picture-wrapper {
-        @apply lg:flex-golden;
-      }
-
-      img {
-        @apply aspect-[3/2] lg:absolute lg:aspect-auto lg:bg-opacity-0;
-      }
-    }
-
-    .picture-wrapper {
-      @apply relative;
-    }
-
-    img {
-      @apply h-full w-full bg-black bg-opacity-20 object-cover;
-    }
-
-    h3 {
-      @apply text-3xl sm:text-4xl;
-    }
-
-    p {
-      @apply max-w-xl sm:text-lg;
-    }
-
-    &:not(.featured) p {
-      @apply lg:max-w-none;
-    }
-
-    ul {
-      @apply font-mono leading-loose sm:text-lg;
-    }
-  }
-
-  .project-details {
-    @apply space-y-4 p-6 sm:space-y-6 sm:p-8 lg:p-12;
-  }
 }
 
 @layer utilities {
