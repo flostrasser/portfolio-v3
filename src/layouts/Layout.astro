@@ -2,6 +2,8 @@
 import Footer from '../components/Footer.astro';
 import Navigation from '../components/Navigation.astro';
 
+import '../styles/global.css';
+
 export interface Props {
   title: string;
 }
@@ -52,9 +54,3 @@ const description =
     <Footer />
   </body>
 </html>
-
-<style is:global>
-  :root {
-    color-scheme: dark;
-  }
-</style>
