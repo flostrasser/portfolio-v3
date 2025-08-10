@@ -9,7 +9,7 @@ const { id, title, renderTitle = true } = Astro.props;
 const titleId = `${id}-title`;
 ---
 
-<section {id} aria-labelledby={titleId}>
+<section {id} aria-labelledby={titleId} class="py-14 sm:py-20">
   {
     renderTitle && (
       <h2
@@ -22,12 +22,3 @@ const titleId = `${id}-title`;
   }
   <slot />
 </section>
-
-<style lang="scss">
-  @tailwind components;
-  @layer components {
-    section {
-      @apply py-14 sm:py-20;
-    }
-  }
-</style>
