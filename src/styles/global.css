@@ -90,34 +90,6 @@
   .btn-sm {
     @apply px-4 py-2;
   }
-
-  .experience-item {
-    @apply justify-start gap-x-4 sm:grid;
-
-    & > * {
-      @apply col-start-2;
-    }
-
-    &::before {
-      @apply sm:content-empty col-start-1 row-span-3 row-start-1 h-full w-[2px] justify-self-center bg-white;
-    }
-
-    &::after {
-      @apply sm:content-empty col-start-1 row-start-1 h-6 w-6 justify-self-center rounded-full border-2 border-white bg-purple-dark;
-    }
-
-    h3 {
-      @apply text-xl text-white;
-    }
-
-    h4 {
-      @apply font-mono;
-    }
-
-    ul {
-      @apply mb-6 mt-3 max-w-2xl space-y-3;
-    }
-  }
 }
 
 @layer utilities {

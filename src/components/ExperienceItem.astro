@@ -1,4 +1,6 @@
 ---
+import classNames from 'classnames';
+
 export interface Props {
   title: string;
   date: string;
@@ -9,10 +11,16 @@ export interface Props {
 const { title, date, location, list } = Astro.props;
 ---
 
-<div class="experience-item">
-  <h3>{title}</h3>
-  <h4>{date} / {location}</h4>
-  <ul class="list">
+<div
+  class={classNames(
+    'justify-start gap-x-4 sm:grid',
+    'sm:before:content-empty before:col-start-1 before:row-span-3 before:row-start-1 before:h-full before:w-[2px] before:justify-self-center before:bg-white',
+    'sm:after:content-empty after:col-start-1 after:row-start-1 after:h-6 after:w-6 after:justify-self-center after:rounded-full after:border-2 after:border-white after:bg-purple-dark'
+  )}
+>
+  <h3 class="col-start-2 text-xl text-white">{title}</h3>
+  <h4 class="col-start-2 font-mono">{date} / {location}</h4>
+  <ul class="list col-start-2 mb-6 mt-3 max-w-2xl space-y-3">
     {list.map((item) => <li>{item}</li>)}
   </ul>
 </div>
