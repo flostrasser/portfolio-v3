@@ -77,7 +77,7 @@
   }
 }
 
-@layer components {
+@layer utilities {
   .btn {
     @apply inline-flex items-center space-x-2 rounded-md border border-white px-6 py-3 font-mono transition-colors hover:bg-white hover:text-purple-dark;
     @apply outline-none ring-purple focus-visible:ring-4;
@@ -90,9 +90,7 @@
   .btn-sm {
     @apply px-4 py-2;
   }
-}
 
-@layer utilities {
   .text-bg-gradient {
     @apply bg-gradient-to-tr from-purple to-blue bg-clip-text text-transparent;
   }
