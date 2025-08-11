@@ -77,7 +77,7 @@
   }
 }
 
-@layer utilities {
+@layer components {
   .btn {
     @apply inline-flex items-center space-x-2 rounded-md border border-white px-6 py-3 font-mono transition-colors hover:bg-white hover:text-purple-dark;
     @apply outline-none ring-purple focus-visible:ring-4;
@@ -87,6 +87,20 @@
     background-size: calc(100% + 2px) calc(100% + 2px);
   }
 
+  .list li {
+    @apply relative ml-5;
+
+    &::before {
+      @apply absolute -left-5 top-2 h-2 w-2 rounded-full bg-gradient-to-tr from-purple to-blue;
+    }
+  }
+
+  .link {
+    @apply hover:whgt-bold underline hover:text-blue;
+  }
+}
+
+@layer utilities {
   .btn-sm {
     @apply px-4 py-2;
   }
@@ -103,18 +117,6 @@
   .text-8xl,
   .text-9xl {
     @apply leading-[1.1];
-  }
-
-  .list li {
-    @apply relative ml-5;
-
-    &::before {
-      @apply absolute -left-5 top-2 h-2 w-2 rounded-full bg-gradient-to-tr from-purple to-blue;
-    }
-  }
-
-  .link {
-    @apply hover:whgt-bold underline hover:text-blue;
   }
 
   .content-empty {
