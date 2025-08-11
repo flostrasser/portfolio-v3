@@ -1,6 +1,7 @@
 ---
 import Logo from '../assets/icons/logo.svg';
 import Hamburger from '../assets/icons/hamburger.svg';
+import classNames from 'classnames';
 ---
 
 <script>
@@ -104,13 +105,18 @@ import Hamburger from '../assets/icons/hamburger.svg';
   initSmoothScrollToTarget();
 </script>
 
-<nav>
-  <div class="nav-container">
-    <a class="-ml-4 flex" href="/#" title="Home" aria-label="Home">
+<nav
+  class="fixed top-0 z-10 w-full bg-purple-dark transition-transform duration-500"
+>
+  <div
+    class="flex w-full flex-wrap items-center justify-between py-4 md:justify-start"
+  >
+    <a class="nav-link -ml-4 flex" href="/#" title="Home" aria-label="Home">
       <Logo />
     </a>
 
     <button
+      class="px-2 py-[0.2rem] md:hidden"
       type="button"
       aria-controls="navbarNav"
       aria-expanded="false"
@@ -119,12 +125,19 @@ import Hamburger from '../assets/icons/hamburger.svg';
       <Hamburger />
     </button>
 
-    <ul id="navbarNav">
-      <li><a href="/#about">About</a></li>
-      <li><a href="/#skills">Skills&nbsp;&&nbsp;Tools</a></li>
-      <li><a href="/#experience">Experience</a></li>
-      <li><a href="/#projects">Projects</a></li>
-      <li><a href="/#contact">Contact</a></li>
+    <ul
+      id="navbarNav"
+      class={classNames(
+        'hidden basis-full flex-col gap-1 md:flex md:basis-auto md:flex-row',
+        '-ml-5 space-y-6 py-6 pl-1 md:ml-0 md:space-y-0 md:pl-0',
+        'text-xl md:text-base'
+      )}
+    >
+      <li><a class="nav-link" href="/#about">About</a></li>
+      <li><a class="nav-link" href="/#skills">Skills&nbsp;&&nbsp;Tools</a></li>
+      <li><a class="nav-link" href="/#experience">Experience</a></li>
+      <li><a class="nav-link" href="/#projects">Projects</a></li>
+      <li><a class="nav-link" href="/#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -132,21 +145,9 @@ import Hamburger from '../assets/icons/hamburger.svg';
 <style lang="scss">
   @tailwind components;
   @layer components {
-    .nav-container {
-      @apply flex w-full flex-wrap items-center justify-between py-4 md:justify-start;
-    }
-
     nav {
-      @apply fixed top-0 z-10 w-full bg-purple-dark transition-transform duration-500;
-
       &.slide-up {
         @apply -translate-y-full;
-      }
-
-      ul {
-        @apply hidden basis-full flex-col gap-1 md:flex md:basis-auto md:flex-row;
-        @apply -ml-5 space-y-6 py-6 pl-1 md:ml-0 md:space-y-0 md:pl-0;
-        @apply text-xl md:text-base;
       }
 
       &.expanded {
@@ -156,20 +157,15 @@ import Hamburger from '../assets/icons/hamburger.svg';
           @apply flex;
         }
       }
+    }
 
-      a,
-      button {
-        @apply rounded-md px-4 py-2 transition-all;
-        @apply hover:bg-purple hover:bg-opacity-10 hover:text-white;
-        @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple;
+    .nav-link {
+      @apply rounded-md px-4 py-2 transition-all;
+      @apply hover:bg-purple hover:bg-opacity-10 hover:text-white;
+      @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple;
 
-        &:hover {
-          font-variation-settings: var(--whgt-bold);
-        }
-      }
-
-      button {
-        @apply px-2 py-[0.2rem] md:hidden;
+      &:hover {
+        font-variation-settings: var(--whgt-bold);
       }
     }
   }
