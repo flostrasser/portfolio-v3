@@ -1,2 +1,21 @@
+packages:
+  - '.' # For non-monorepos, this includes just the root directory
+
 allowBuilds:
   esbuild: true
+  sharp: true
+
+# Block Exotic Transitive Dependencies
+# Prevents sub-dependencies from being pulled from unverified Git or URL sources.
+blockExoticSubdeps: true
+
+# --- Supply Chain Security Configurations ---
+
+# Minimum Release Age
+# Delay new versions by 24 hours (1440 mins)
+# Prevents immediate installation of potentially malicious "day-zero" releases.
+minimumReleaseAge: 1440
+
+# Trust Policy
+# Prevents downgrading to versions with lower trust/provenance levels.
+trustPolicy: no-downgrade
