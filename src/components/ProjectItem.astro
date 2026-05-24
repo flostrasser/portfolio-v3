@@ -51,7 +51,7 @@ const {
     {
       isFeatured ? (
         <Picture
-          class="h-full w-full bg-black bg-opacity-20 object-cover"
+          class="h-full w-full bg-black/20 object-cover"
           src={image}
           widths={[675, 1152, 1920]}
           sizes="(max-width: 639px) 90vw, (max-width: 1023px) 576px, 960px"
@@ -62,7 +62,7 @@ const {
       ) : (
         <Picture
           class={classNames(
-            'aspect-[3/2] h-full w-full bg-black bg-opacity-20 object-cover lg:absolute lg:aspect-auto lg:bg-opacity-0',
+            'lg:bg-opacity-0 aspect-3/2 h-full w-full bg-black/20 object-cover lg:absolute lg:aspect-auto',
             {
               'object-bottom': imageAlign === 'bottom',
             }

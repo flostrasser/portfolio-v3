@@ -106,7 +106,7 @@ import classNames from 'classnames';
 </script>
 
 <nav
-  class="fixed top-0 z-10 w-full bg-purple-dark transition-transform duration-500"
+  class="bg-purple-dark fixed top-0 z-10 w-full transition-transform duration-500"
 >
   <div
     class="flex w-full flex-wrap items-center justify-between py-4 md:justify-start"
@@ -142,31 +142,29 @@ import classNames from 'classnames';
   </div>
 </nav>
 
-<style lang="scss">
-  @tailwind components;
-  @layer components {
-    nav {
-      &.slide-up {
-        @apply -translate-y-full;
-      }
+<style>
+  @reference "../styles/global.css";
 
-      &.expanded {
-        @apply border-b-2 border-blue border-opacity-20 md:border-b-0;
-
-        ul {
-          @apply flex;
-        }
-      }
+  nav {
+    &.slide-up {
+      @apply -translate-y-full;
     }
 
-    .nav-link {
-      @apply rounded-md px-4 py-2 transition-all;
-      @apply hover:bg-purple hover:bg-opacity-10 hover:text-white;
-      @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple;
+    &.expanded {
+      @apply border-blue/20 border-b-2 md:border-b-0;
 
-      &:hover {
-        font-variation-settings: var(--whgt-bold);
+      ul {
+        @apply flex;
       }
+    }
+  }
+  .nav-link {
+    @apply rounded-md px-4 py-2 transition-all;
+    @apply hover:bg-purple/10 hover:text-white;
+    @apply focus-visible:ring-purple focus-visible:ring-2 focus-visible:outline-hidden;
+
+    &:hover {
+      font-variation-settings: var(--whgt-bold);
     }
   }
 </style>

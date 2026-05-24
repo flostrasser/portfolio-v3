@@ -1,32 +1,136 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'PTRootUIWebVF';
+  src:
+    local(''),
+    url('/fonts/PT-Root-UI/PT-Root-UI_VF.woff2') format('woff2'),
+    url('/fonts/PT-Root-UI/PT-Root-UI_VF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src:
+    local(''),
+    url('/fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff2')
+      format('woff2'),
+    url('/fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  --color-gray-950: #0a0a0a;
+
+  --color-purple: #6e7eff;
+  --color-purple-dark: #101326;
+
+  --color-blue: #4de5ff;
+  --color-tangerine: #ff8d81;
+  --color-pink: #db69fb;
+  --color-yellow: #ffd840;
+  --color-turquoise: #0de3ca;
+  --color-green: #76f266;
+  --color-miru: hsl(187deg 40% 30%);
+  --color-mybay: hsl(192deg 100% 18%);
+  --color-qhliving: hsl(20deg 49% 38%);
+  --color-teleclap: hsl(0deg 44% 45%);
+  --color-flexgallery: hsl(261deg 27% 26%);
+  --color-threeyourmind: hsl(217deg 63% 29%);
+
+  --font-*: initial;
+  --font-sans: PTRootUIWebVF, system-ui, -apple-system, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+@utility flex-golden {
+  @apply flex-[1_0_61.8%];
+}
+
+@utility btn {
+  @apply hover:text-purple-dark inline-flex items-center space-x-2 rounded-md border border-white px-6 py-3 font-mono transition-colors hover:bg-white;
+  @apply ring-purple outline-hidden focus-visible:ring-4;
+
+  /* fix for bg-gradient */
+  @apply bg-center bg-no-repeat;
+  background-size: calc(100% + 2px) calc(100% + 2px);
+}
+
+@utility list {
+  & li {
+    @apply relative ml-5;
+
+    &::before {
+      @apply from-purple to-blue absolute top-2 -left-5 h-2 w-2 rounded-full bg-linear-to-tr;
+    }
+  }
+}
+
+@utility link {
+  @apply hover:whgt-bold hover:text-blue underline;
+}
+
+@utility btn-sm {
+  @apply px-4 py-2;
+}
+
+@utility text-bg-gradient {
+  @apply from-purple to-blue bg-linear-to-tr bg-clip-text text-transparent;
+}
+
+/* slightly increase line-height for large text sizes to */
+/* fix text clipping issue when using '.text-bg-gradient'. */
+@utility text-5xl {
+  @apply leading-[1.1];
+}
+
+@utility text-6xl {
+  @apply leading-[1.1];
+}
+
+@utility text-7xl {
+  @apply leading-[1.1];
+}
+
+@utility text-8xl {
+  @apply leading-[1.1];
+}
+
+@utility text-9xl {
+  @apply leading-[1.1];
+}
+
+@utility content-empty {
+  content: '';
+}
+
+@utility whgt-bold {
+  font-variation-settings: var(--whgt-bold);
+}
 
 @layer base {
-  @font-face {
-    font-family: 'PTRootUIWebVF';
-    src:
-      local(''),
-      url('/fonts/PT-Root-UI/PT-Root-UI_VF.woff2') format('woff2'),
-      url('/fonts/PT-Root-UI/PT-Root-UI_VF.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Roboto Mono';
-    src:
-      local(''),
-      url('/fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff2')
-        format('woff2'),
-      url('/fonts/Roboto-Mono/roboto-mono-v13-latin-regular.woff')
-        format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
   :root {
     --container-padding: 5vw;
     --container-max-width: 60rem;
@@ -78,52 +182,13 @@
 }
 
 @layer components {
-  .btn {
-    @apply inline-flex items-center space-x-2 rounded-md border border-white px-6 py-3 font-mono transition-colors hover:bg-white hover:text-purple-dark;
-    @apply outline-none ring-purple focus-visible:ring-4;
+  .nav-link {
+    @apply rounded-md px-4 py-2 transition-all;
+    @apply hover:bg-purple/10 hover:text-white;
+    @apply focus-visible:ring-purple focus-visible:ring-2 focus-visible:outline-hidden;
 
-    /* fix for bg-gradient */
-    @apply bg-center bg-no-repeat;
-    background-size: calc(100% + 2px) calc(100% + 2px);
-  }
-
-  .list li {
-    @apply relative ml-5;
-
-    &::before {
-      @apply absolute -left-5 top-2 h-2 w-2 rounded-full bg-gradient-to-tr from-purple to-blue;
+    &:hover {
+      font-variation-settings: var(--whgt-bold);
     }
-  }
-
-  .link {
-    @apply hover:whgt-bold underline hover:text-blue;
-  }
-}
-
-@layer utilities {
-  .btn-sm {
-    @apply px-4 py-2;
-  }
-
-  .text-bg-gradient {
-    @apply bg-gradient-to-tr from-purple to-blue bg-clip-text text-transparent;
-  }
-
-  /* slightly increase line-height for large text sizes to */
-  /* fix text clipping issue when using '.text-bg-gradient'. */
-  .text-5xl,
-  .text-6xl,
-  .text-7xl,
-  .text-8xl,
-  .text-9xl {
-    @apply leading-[1.1];
-  }
-
-  .content-empty {
-    content: '';
-  }
-
-  .whgt-bold {
-    font-variation-settings: var(--whgt-bold);
   }
 }
