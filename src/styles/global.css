@@ -59,10 +59,12 @@
   --color-threeyourmind: hsl(217deg 63% 29%);
 
   --font-*: initial;
-  --font-sans: PTRootUIWebVF, system-ui, -apple-system, 'Segoe UI', Roboto,
-    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-  --font-mono: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
-    Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-sans:
+    PTRootUIWebVF, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-mono:
+    'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
 }
 
 @utility flex-golden {
