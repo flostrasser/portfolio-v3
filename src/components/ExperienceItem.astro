@@ -1,6 +1,4 @@
 ---
-import classNames from 'classnames';
-
 export interface Props {
   title: string;
   date: string;
@@ -12,11 +10,11 @@ const { title, date, location, list } = Astro.props;
 ---
 
 <div
-  class={classNames(
+  class:list={[
     'justify-start gap-x-4 sm:grid',
-    'sm:before:content-empty before:col-start-1 before:row-span-3 before:row-start-1 before:h-full before:w-[2px] before:justify-self-center before:bg-white',
-    'sm:after:content-empty after:col-start-1 after:row-start-1 after:h-6 after:w-6 after:justify-self-center after:rounded-full sm:after:border-2 after:border-white after:bg-purple-dark'
-  )}
+    'sm:before:content-empty before:col-start-1 before:row-span-3 before:row-start-1 before:h-full before:w-0.5 before:justify-self-center before:bg-white',
+    'sm:after:content-empty after:bg-purple-dark after:col-start-1 after:row-start-1 after:h-6 after:w-6 after:justify-self-center after:rounded-full after:border-white sm:after:border-2',
+  ]}
 >
   <h3 class="col-start-2 text-xl text-white">{title}</h3>
   <h4 class="col-start-2 font-mono">{date} / {location}</h4>

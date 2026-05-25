@@ -19,7 +19,6 @@
     "@astrojs/netlify": "^7.0.10",
     "@tailwindcss/postcss": "^4.3.0",
     "astro": "^6.3.7",
-    "classnames": "^2.5.1",
     "postcss-preset-env": "^11.3.0",
     "sass": "^1.83.1",
     "sharp": "^0.34.5",
