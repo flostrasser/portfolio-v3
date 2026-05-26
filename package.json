@@ -12,11 +12,15 @@
     "lint": "prettier . --check && eslint .",
     "lint:fix": "prettier . --write . && eslint . --fix",
     "type:check": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test:e2e": "ASTRO_ADAPTER=node playwright test",
+    "test:e2e:ui": "ASTRO_ADAPTER=node playwright test --ui",
+    "test:e2e:update": "ASTRO_ADAPTER=node playwright test --update-snapshots"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/netlify": "^7.0.10",
+    "@astrojs/node": "^10.1.1",
     "@tailwindcss/postcss": "^4.3.0",
     "astro": "^6.3.7",
     "postcss-preset-env": "^11.3.0",
@@ -25,6 +29,7 @@
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
     "@typescript-eslint/parser": "^8.59.4",
     "eslint": "^10.4.0",
     "eslint-plugin-astro": "^1.7.0",
