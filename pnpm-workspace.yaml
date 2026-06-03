@@ -22,3 +22,8 @@ trustPolicy: no-downgrade
 
 trustPolicyExclude:
   - 'tinyclip@0.1.13'
+  - 'chokidar@4.0.3'
+  - '@netlify/edge-bundler@14.10.3'
+  - '@netlify/zip-it-and-ship-it@14.7.0'
+  - '@netlify/serverless-functions-api@2.16.0'
+  - 'semver@6.3.1'
