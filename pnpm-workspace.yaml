@@ -19,3 +19,6 @@ minimumReleaseAge: 1440
 # Trust Policy
 # Prevents downgrading to versions with lower trust/provenance levels.
 trustPolicy: no-downgrade
+
+trustPolicyExclude:
+  - 'tinyclip@0.1.13'
