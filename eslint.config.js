@@ -12,9 +12,16 @@ export default [
   ...eslintPluginTs.configs.strict,
   ...eslintPluginAstro.configs['flat/jsx-a11y-strict'],
   {
+    files: ['src/**/*.{astro,ts}'],
+    languageOptions: {
+      parserOptions: {
+        project: true,
+        tsconfigRootDir: import.meta.dirname,
+        extraFileExtensions: ['.astro'],
+      },
+    },
     rules: {
-      // override/add rules settings here, such as:
-      // "astro/no-set-html-directive": "error"
+      '@typescript-eslint/no-deprecated': 'error',
     },
   },
   {
