@@ -13,9 +13,9 @@
     "lint:fix": "prettier . --write . && eslint . --fix",
     "type:check": "tsc --noEmit",
     "prepare": "husky",
-    "test:e2e": "ASTRO_ADAPTER=node playwright test",
-    "test:e2e:ui": "ASTRO_ADAPTER=node playwright test --ui",
-    "test:e2e:update": "ASTRO_ADAPTER=node playwright test --update-snapshots"
+    "test:e2e": "E2E=true playwright test",
+    "test:e2e:ui": "E2E=true playwright test --ui",
+    "test:e2e:update": "E2E=true playwright test --update-snapshots"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",

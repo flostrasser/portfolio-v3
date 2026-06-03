@@ -3,19 +3,33 @@ import node from '@astrojs/node';
 import { defineConfig, fontProviders } from 'astro/config';
 import process from 'node:process';
 
-// for dynamic robots.txt
-let adapter = netlify();
+const isE2E = process.env.E2E === 'true';
 
-// for playwright tests, as netlify adapter doesn't support the preview server
-if (process.env.ASTRO_ADAPTER === 'node') {
-  adapter = node({
-    mode: 'standalone',
-  });
-}
+// for dynamic robots.txt; switch to the node adapter for playwright tests
+// since the netlify adapter doesn't support the preview server
+const adapter = isE2E ? node({ mode: 'standalone' }) : netlify();
 
 // https://astro.build/config
 export default defineConfig({
   adapter,
+  devToolbar: { enabled: !isE2E },
+  // Astro's default markdown syntax highlighter uses inline styles that aren't
+  // compatible with CSP. No code blocks are rendered here, so disable it.
+  markdown: { syntaxHighlight: false },
+  security: {
+    csp: {
+      algorithm: 'SHA-256',
+      directives: [
+        "default-src 'self'",
+        "img-src 'self' data:",
+        "font-src 'self'",
+        "connect-src 'self'",
+        // frame-ancestors is set via netlify.toml header — it's ignored in meta-tag CSP
+        "base-uri 'self'",
+        "form-action 'self'",
+      ],
+    },
+  },
   fonts: [
     {
       name: 'PT Root UI',
