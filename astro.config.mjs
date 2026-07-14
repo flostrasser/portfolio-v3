@@ -15,6 +15,10 @@ export default defineConfig({
   adapter,
   vite: { plugins: [tailwindcss()] },
   compressHTML: 'jsx',
+  // Inline the (small) CSS bundle into a <style> tag to remove the
+  // render-blocking stylesheet request. Astro's CSP hashes the inline
+  // <style> automatically, so this stays CSP-compliant.
+  build: { inlineStylesheets: 'always' },
   devToolbar: { enabled: !isE2E },
   // Astro's default markdown syntax highlighter uses inline styles that aren't
   // compatible with CSP. No code blocks are rendered here, so disable it.
