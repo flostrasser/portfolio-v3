@@ -37,25 +37,36 @@ import Hamburger from './Hamburger.astro';
     // hide navbar when scrolling down
     const scrollPosThreshold = 50;
     let prevScrollPos = document.documentElement.scrollTop;
-    window.addEventListener('scroll', () => {
-      const currentScrollPos = document.documentElement.scrollTop;
-      const isBelowThreshold = currentScrollPos > scrollPosThreshold;
-      const isNavbarExpanded = nav.classList.contains('expanded');
-      const isPreventSlideUp = nav.classList.contains('no-slide-up');
+    let ticking = false;
 
-      if (
-        currentScrollPos > prevScrollPos &&
-        isBelowThreshold &&
-        !isNavbarExpanded &&
-        !isPreventSlideUp
-      ) {
-        nav.classList.add('slide-up'); // hide
-      } else if (currentScrollPos < prevScrollPos) {
-        nav.classList.remove('slide-up'); // show
-      }
+    const handleScroll = () => {
+      // Coalesce work into one rAF tick per frame so the layout read
+      // (scrollTop) and class writes don't interleave and force reflow.
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        const currentScrollPos = document.documentElement.scrollTop;
+        const isBelowThreshold = currentScrollPos > scrollPosThreshold;
+        const isNavbarExpanded = nav.classList.contains('expanded');
+        const isPreventSlideUp = nav.classList.contains('no-slide-up');
 
-      prevScrollPos = currentScrollPos;
-    });
+        if (
+          currentScrollPos > prevScrollPos &&
+          isBelowThreshold &&
+          !isNavbarExpanded &&
+          !isPreventSlideUp
+        ) {
+          nav.classList.add('slide-up'); // hide
+        } else if (currentScrollPos < prevScrollPos) {
+          nav.classList.remove('slide-up'); // show
+        }
+
+        prevScrollPos = currentScrollPos;
+        ticking = false;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
   }
 
   function initSmoothScrollToTarget() {
