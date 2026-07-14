@@ -36,7 +36,10 @@ import Hamburger from './Hamburger.astro';
 
     // hide navbar when scrolling down
     const scrollPosThreshold = 50;
-    let prevScrollPos = document.documentElement.scrollTop;
+    // Start at 0 (the page loads at the top) instead of reading scrollTop here.
+    // Reading layout at module-eval forces the browser's first layout to run
+    // synchronously (a forced reflow); the first scroll tick reads the real value.
+    let prevScrollPos = 0;
     let ticking = false;
 
     const handleScroll = () => {
