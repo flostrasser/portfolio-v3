@@ -1,5 +1,6 @@
 import netlify from '@astrojs/netlify';
 import node from '@astrojs/node';
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig, fontProviders } from 'astro/config';
 import process from 'node:process';
 
@@ -12,6 +13,11 @@ const adapter = isE2E ? node({ mode: 'standalone' }) : netlify();
 // https://astro.build/config
 export default defineConfig({
   adapter,
+  vite: { plugins: [tailwindcss()] },
+  // Astro 7 changed the default to 'jsx', which trims whitespace-only text nodes
+  // between inline elements (dropping intended spaces around <strong> in index.astro).
+  // Keep the Astro 6 HTML whitespace semantics.
+  compressHTML: true,
   devToolbar: { enabled: !isE2E },
   // Astro's default markdown syntax highlighter uses inline styles that aren't
   // compatible with CSP. No code blocks are rendered here, so disable it.

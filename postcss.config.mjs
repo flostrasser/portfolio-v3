@@ -1,10 +1,9 @@
-import tailwindcss from '@tailwindcss/postcss';
 import PostcssPresetEnv from 'postcss-preset-env';
 
 // prettier-ignore
 export default {
   plugins: [
-    tailwindcss,
+    // Tailwind is handled by @tailwindcss/vite in astro.config.mjs
     PostcssPresetEnv({ stage: 2 }),
   ],
 }
