@@ -14,10 +14,7 @@ const adapter = isE2E ? node({ mode: 'standalone' }) : netlify();
 export default defineConfig({
   adapter,
   vite: { plugins: [tailwindcss()] },
-  // Astro 7 changed the default to 'jsx', which trims whitespace-only text nodes
-  // between inline elements (dropping intended spaces around <strong> in index.astro).
-  // Keep the Astro 6 HTML whitespace semantics.
-  compressHTML: true,
+  compressHTML: 'jsx',
   devToolbar: { enabled: !isE2E },
   // Astro's default markdown syntax highlighter uses inline styles that aren't
   // compatible with CSP. No code blocks are rendered here, so disable it.
