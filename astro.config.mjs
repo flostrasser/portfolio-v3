@@ -31,10 +31,22 @@ export default defineConfig({
         "img-src 'self' data:",
         "font-src 'self'",
         "connect-src 'self'",
+        "object-src 'none'",
         // frame-ancestors is set via netlify.toml header — it's ignored in meta-tag CSP
         "base-uri 'self'",
         "form-action 'self'",
+        // Trusted Types: route DOM XSS sinks through a policy. The only client
+        // scripts here use safe DOM APIs (addEventListener/setAttribute), so no
+        // policy is created and none needs to be allowed.
+        "require-trusted-types-for 'script'",
       ],
+      // 'unsafe-inline' is a no-op fallback for legacy browsers that don't
+      // support hashes; modern browsers ignore it whenever a hash is present.
+      // 'self' must be repeated here since `resources` overrides Astro's
+      // defaults. Astro appends the per-page script hashes after these.
+      scriptDirective: {
+        resources: ["'self'", "'unsafe-inline'"],
+      },
     },
   },
   fonts: [
