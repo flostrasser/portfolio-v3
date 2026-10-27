@@ -118,12 +118,8 @@ import Hamburger from './Hamburger.astro';
   initSmoothScrollToTarget();
 </script>
 
-<nav
-  class="bg-purple-dark group fixed top-0 z-10 w-full transition-transform duration-500"
->
-  <div
-    class="flex w-full flex-wrap items-center justify-between py-4 md:justify-start"
-  >
+<nav class="bg-purple-dark group fixed top-0 z-10 w-full transition-transform duration-500">
+  <div class="flex w-full flex-wrap items-center justify-between py-4 md:justify-start">
     <a class="nav-link -ml-4 flex" href="/#" title="Home" aria-label="Home">
       <Logo />
     </a>
@@ -147,11 +143,31 @@ import Hamburger from './Hamburger.astro';
         'group-[.expanded]:flex',
       ]}
     >
-      <li><a class="nav-link" href="/#about">About</a></li>
-      <li><a class="nav-link" href="/#skills">Skills&nbsp;&&nbsp;Tools</a></li>
-      <li><a class="nav-link" href="/#experience">Experience</a></li>
-      <li><a class="nav-link" href="/#projects">Projects</a></li>
-      <li><a class="nav-link" href="/#contact">Contact</a></li>
+      <li>
+        <a class="nav-link" href="/#about">
+          About
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="/#skills">
+          Skills&nbsp;&&nbsp;Tools
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="/#experience">
+          Experience
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="/#projects">
+          Projects
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="/#contact">
+          Contact
+        </a>
+      </li>
     </ul>
   </div>
 </nav>

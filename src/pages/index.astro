@@ -30,26 +30,26 @@ const title = 'Florian Strasser - Frontend Development & Web Design Portfolio';
 
     <p class="mb-6 max-w-2xl sm:text-xl">
       I’m a multi-disciplinary{' '}
-      <strong class="text-white">frontend developer</strong> & <strong
-        class="text-white">web designer</strong
-      > with a keen eye for details. I focus on fast and accessible web experiences.
+      <strong class="text-white">frontend developer</strong> &{' '}
+      <strong class="text-white">web designer</strong> with a keen eye for
+      details. I focus on fast and accessible web experiences.
     </p>
 
     <p class="mb-4 max-w-2xl sm:text-xl">
       I have worked as a web &{' '}
-      <strong class="text-white">graphic designer</strong> at 3YOURMIND, then shifted
-      my focus to{' '}
-      <strong class="text-white">web development</strong>. At Allod MediaC2, I
-      was leading the design and development of websites for customers like
-      Reggeborgh, Taurecon, and Groth Gruppe.
+      <strong class="text-white">graphic designer</strong> at 3YOURMIND, then
+      shifted my focus to <strong class="text-white">web development</strong>.
+      At Allod MediaC2, I was leading the design and development of websites for
+      customers like Reggeborgh, Taurecon, and Groth Gruppe.
     </p>
 
     <div class="space-y-4">
       <a
         href="/#projects"
         class="btn from-purple to-tangerine text-purple-dark hover:from-purple hover:to-blue mr-4 border-transparent bg-linear-to-tr hover:text-white"
-        >View Projects</a
       >
+        View Projects
+      </a>
       <!-- <a href="/CV_Florian_Strasser.pdf" class="btn" target="_blank">
         <span>Download CV</span>
         <IconDownload />
@@ -188,9 +188,9 @@ const title = 'Florian Strasser - Frontend Development & Web Design Portfolio';
   <Section id="contact" title="Contact">
     <h3 class="mb-2 text-xl sm:text-2xl">Say hello!</h3>
     <p class="sm:text-lg">
-      <s class="decoration-2"
-        >I'm currently open to new opportunities in Berlin or remote.</s
-      >
+      <s class="decoration-2">
+        I'm currently open to new opportunities in Berlin or remote.
+      </s>
     </p>
     <p class="mb-6 sm:text-lg">
       Contact me on{' '}
@@ -198,45 +198,45 @@ const title = 'Florian Strasser - Frontend Development & Web Design Portfolio';
         class="link"
         href="https://www.linkedin.com/in/florian-strasser/"
         target="_blank"
-        rel="noreferrer">LinkedIn</a
-      >{' '}
+        rel="noreferrer"
+      >
+        LinkedIn
+      </a>{' '}
       or drop me a line with the button below.
     </p>
     <SendEmailBtn />
 
     <h3 class="mb-2 text-xl sm:text-2xl">Find me here:</h3>
     <ul class="sm:text-lg">
-      {
-        [
-          {
-            link: 'https://www.linkedin.com/in/florian-strasser/',
-            icon: 'linkedin',
-            text: 'linkedin.com/in/florian-strasser',
-          },
-          {
-            link: 'https://github.com/flostrasser',
-            icon: 'github',
-            text: 'github.com/flostrasser',
-          },
-          {
-            link: 'https://codepen.io/flostrasser',
-            icon: 'codepen',
-            text: 'codepen.io/flostrasser',
-          },
-        ].map(({ link, icon, text }) => (
-          <>
-            {/* Avoid whitespace before anchor tag */}
-            {/* prettier-ignore */}
-            <li><a class="link inline-flex items-center" href={link}>
+      {[
+        {
+          link: 'https://www.linkedin.com/in/florian-strasser/',
+          icon: 'linkedin',
+          text: 'linkedin.com/in/florian-strasser',
+        },
+        {
+          link: 'https://github.com/flostrasser',
+          icon: 'github',
+          text: 'github.com/flostrasser',
+        },
+        {
+          link: 'https://codepen.io/flostrasser',
+          icon: 'codepen',
+          text: 'codepen.io/flostrasser',
+        },
+      ].map(({ link, icon, text }) => (
+        <>
+          {/* Avoid whitespace before anchor tag */}
+          {/* prettier-ignore */}
+          <li><a class="link inline-flex items-center" href={link}>
               {icon === 'linkedin' && <IconLinkedIn />}
               {icon === 'github' && <IconGitHub />}
               {icon === 'codepen' && <IconCodepen />}
               <span class="ml-2">{text}</span>
             </a>
           </li>
-          </>
-        ))
-      }
+        </>
+      ))}
     </ul>
   </Section>
 </Layout>

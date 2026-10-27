@@ -6,16 +6,12 @@ export interface Props {
 const { skills } = Astro.props;
 ---
 
-<div
-  class="grid w-full grid-cols-[repeat(auto-fill,9rem)] gap-x-24 gap-y-8 font-mono sm:text-lg"
->
-  {
-    skills.map((column) => (
-      <ul>
-        {column.map((skill) => (
-          <li>{skill}</li>
-        ))}
-      </ul>
-    ))
-  }
+<div class="grid w-full grid-cols-[repeat(auto-fill,9rem)] gap-x-24 gap-y-8 font-mono sm:text-lg">
+  {skills.map((column) => (
+    <ul>
+      {column.map((skill) => (
+        <li>{skill}</li>
+      ))}
+    </ul>
+  ))}
 </div>

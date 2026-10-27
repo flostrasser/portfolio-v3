@@ -50,34 +50,32 @@ const {
       },
     ]}
   >
-    {
-      isFeatured ? (
-        <Picture
-          class="h-full w-full bg-black/20 object-cover"
-          src={image}
-          widths={[675, 1152, 1920]}
-          sizes="(max-width: 639px) 90vw, (max-width: 1023px) 576px, 960px"
-          formats={['avif']}
-          alt={imageAlt}
-          loading="lazy"
-        />
-      ) : (
-        <Picture
-          class:list={[
-            'aspect-3/2 h-full w-full bg-black/20 object-cover lg:absolute lg:aspect-auto lg:bg-transparent',
-            {
-              'object-bottom': imageAlign === 'bottom',
-            },
-          ]}
-          src={image}
-          widths={[675, 1152, 1187]}
-          sizes="(max-width: 639px) 90vw, (max-width: 1023px) 576px, 593px"
-          formats={['avif']}
-          alt={imageAlt}
-          loading="lazy"
-        />
-      )
-    }
+    {isFeatured ? (
+      <Picture
+        class="h-full w-full bg-black/20 object-cover"
+        src={image}
+        widths={[675, 1152, 1920]}
+        sizes="(max-width: 639px) 90vw, (max-width: 1023px) 576px, 960px"
+        formats={['avif']}
+        alt={imageAlt}
+        loading="lazy"
+      />
+    ) : (
+      <Picture
+        class:list={[
+          'aspect-3/2 h-full w-full bg-black/20 object-cover lg:absolute lg:aspect-auto lg:bg-transparent',
+          {
+            'object-bottom': imageAlign === 'bottom',
+          },
+        ]}
+        src={image}
+        widths={[675, 1152, 1187]}
+        sizes="(max-width: 639px) 90vw, (max-width: 1023px) 576px, 593px"
+        formats={['avif']}
+        alt={imageAlt}
+        loading="lazy"
+      />
+    )}
   </div>
   <div
     class:list={[
@@ -100,7 +98,9 @@ const {
       {description}
     </p>
     <ul class="font-mono leading-loose sm:text-lg">
-      {technologies.map((technology) => <li>{technology}</li>)}
+      {technologies.map((technology) => (
+        <li>{technology}</li>
+      ))}
     </ul>
     <a class="btn btn-sm" href={link} target="_blank" rel="noreferrer">
       <span>{linkText}</span>

@@ -10,15 +10,13 @@ const titleId = `${id}-title`;
 ---
 
 <section {id} aria-labelledby={titleId} class="py-14 sm:py-20">
-  {
-    renderTitle && (
-      <h2
-        id={titleId}
-        class="text-bg-gradient mb-8 text-4xl sm:mb-12 sm:text-6xl"
-      >
-        {title}
-      </h2>
-    )
-  }
+  {renderTitle && (
+    <h2
+      id={titleId}
+      class="text-bg-gradient mb-8 text-4xl sm:mb-12 sm:text-6xl"
+    >
+      {title}
+    </h2>
+  )}
   <slot />
 </section>

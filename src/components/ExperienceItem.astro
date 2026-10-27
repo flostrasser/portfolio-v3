@@ -17,8 +17,12 @@ const { title, date, location, list } = Astro.props;
   ]}
 >
   <h3 class="col-start-2 text-xl text-white">{title}</h3>
-  <h4 class="col-start-2 font-mono">{date} / {location}</h4>
+  <h4 class="col-start-2 font-mono">
+    {date} / {location}
+  </h4>
   <ul class="list col-start-2 mt-3 mb-6 max-w-2xl space-y-3">
-    {list.map((item) => <li>{item}</li>)}
+    {list.map((item) => (
+      <li>{item}</li>
+    ))}
   </ul>
 </div>
